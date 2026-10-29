@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nocturne 資料夾結構示意</title>
+<style>
+:root{--ground:#181818;--panel:#202020;--text:#f1f1f1;--muted:#aaa;--faint:#8a8a8a;--line:#333;--now:rgb(247,11,11);--sel:#64333b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--text);font:16px/1.6 "Microsoft JhengHei UI","Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif}
+main{max-width:980px;margin:0 auto;padding:32px 16px 56px}
+h1{font-size:26px;font-weight:600;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:20px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+.tree{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 6px}
+.tree .root{color:var(--faint);padding:2px 12px 6px;font-size:14px}
+.tree button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--text);font:inherit;padding:5px 12px;border-radius:4px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tree button:hover{background:#2a2a2a}
+.tree button[aria-pressed="true"]{background:var(--sel)}
+.tree button:focus-visible{outline:2px solid var(--text);outline-offset:-2px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px 22px;min-height:190px}
+.crumb{color:var(--faint);font-size:14px;word-break:break-all;margin-bottom:8px}
+.card h2{margin:0 0 8px;font-size:36px;line-height:1.15;font-weight:400}
+.meta{color:var(--muted);font-size:17px}
+.btns{display:flex;gap:10px;margin-top:18px;align-items:center}
+.play{width:48px;height:48px;border-radius:50%;background:var(--now);display:grid;place-items:center}
+.play svg{width:20px;height:20px;fill:#fff}
+.ghost{height:36px;padding:0 16px;border-radius:18px;border:1px solid #3d3d3d;display:inline-flex;align-items:center;color:var(--text);font-size:15px}
+.hint{color:var(--faint);font-size:14px;margin:14px 2px 0}
+.note{margin-top:28px;color:var(--muted);font-size:15px}
+.note a{color:#8ab4f8}
+</style></head><body><main>
+<h1>Nocturne 的專輯標頭：資料夾怎麼變成標題</h1>
+<p class="sub">我的音樂是照資料夾一層一層整理的。點左邊的資料夾，右邊就是 Nocturne 上方專輯標頭會顯示的內容。</p>
+<div class="grid">
+  <nav class="tree" id="tree" aria-label="範例音樂庫"><div class="root">D:\Music</div></nav>
+  <section>
+    <div class="card" aria-live="polite">
+      <div class="crumb" id="crumb"></div>
+      <h2 id="title"></h2>
+      <div class="meta" id="meta"></div>
+      <div class="btns"><span class="play"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span><span class="ghost">隨機一首</span><span class="ghost">加入佇列</span></div>
+    </div>
+    <p class="hint" id="hint"></p>
+  </section>
+</div>
+<p class="note">這是示意用的假資料（D:\Music、範例歌手），標題與資訊列是用 Nocturne 標頭網頁真正的規則算出來的。
+專輯有標籤就用標籤、沒有就用資料夾名；點到 Disc 資料夾，資訊列會補上是第幾片。
+完整說明與下載：<a href="https://github.com/openeric2000/fb2k-nocturne">github.com/openeric2000/fb2k-nocturne</a></p>
+</main>
+<script>
+const DATA = [{"label":"日文歌","depth":0,"path":"D:\\Music\\日文歌","count":44,"title":"日文歌","crumb":"日文歌","meta":"4 張專輯 · 44 首 · 3 小時 2 分 · 範例歌手、另一位歌手"},{"label":"01. 範例歌手","depth":1,"path":"D:\\Music\\日文歌\\01. 範例歌手","count":43,"title":"範例歌手","crumb":"日文歌 › 01. 範例歌手","meta":"3 張專輯 · 43 首 · 2 小時 57 分 · 範例歌手"},{"label":"01. First Album","depth":2,"path":"D:\\Music\\日文歌\\01. 範例歌手\\01. First Album","count":12,"title":"First Album","crumb":"日文歌 › 01. 範例歌手 › 01. First Album","meta":"範例歌手 · 2021 · 12 首 · 49 分 6 秒"},{"label":"02. Second Album","depth":2,"path":"D:\\Music\\日文歌\\01. 範例歌手\\02. Second Album","count":20,"title":"Second Album","crumb":"日文歌 › 01. 範例歌手 › 02. Second Album","meta":"範例歌手 · 2023 · 20 首 · 1 小時 26 分"},{"label":"Disc 1","depth":3,"path":"D:\\Music\\日文歌\\01. 範例歌手\\02. Second Album\\Disc 1","count":10,"title":"Second Album","crumb":"日文歌 › 01. 範例歌手 › 02. Second Album › Disc 1","meta":"Disc 1 · 範例歌手 · 2023 · 10 首 · 41 分 25 秒"},{"label":"Disc 2","depth":3,"path":"D:\\Music\\日文歌\\01. 範例歌手\\02. Second Album\\Disc 2","count":10,"title":"Second Album","crumb":"日文歌 › 01. 範例歌手 › 02. Second Album › Disc 2","meta":"Disc 2 · 範例歌手 · 2023 · 10 首 · 44 分 45 秒"},{"label":"03. Third Album","depth":2,"path":"D:\\Music\\日文歌\\01. 範例歌手\\03. Third Album","count":11,"title":"Third Album","crumb":"日文歌 › 01. 範例歌手 › 03. Third Album","meta":"範例歌手 · 2024 · 11 首 · 42 分 32 秒"},{"label":"02. 另一位歌手","depth":1,"path":"D:\\Music\\日文歌\\02. 另一位歌手","count":1,"title":"Sweet Song","crumb":"日文歌 › 02. 另一位歌手 › Sweet Song","meta":"另一位歌手 · 2022 · 1 首 · 4 分 27 秒"}];
+const tree = document.getElementById('tree');
+function show(i) {
+  const d = DATA[i];
+  document.getElementById('crumb').textContent = d.crumb || d.path;
+  document.getElementById('title').textContent = d.title;
+  document.getElementById('meta').textContent = d.meta;
+  document.getElementById('hint').textContent = '點的資料夾：' + d.path + '（' + d.count + ' 首送進「目前選取資料夾」）';
+  tree.querySelectorAll('button').forEach((b, k) => b.setAttribute('aria-pressed', k === i ? 'true' : 'false'));
+}
+DATA.forEach((d, i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.style.paddingLeft = (12 + d.depth * 18) + 'px';
+  b.textContent = d.label + '（' + d.count + '）';
+  b.onclick = () => show(i);
+  tree.appendChild(b);
+});
+show(2);
+</script></body></html>
