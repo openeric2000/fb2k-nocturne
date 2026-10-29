@@ -1,8 +1,10 @@
 # Nocturne for foobar2000
 
+**繁體中文** | [English](https://github.com/openeric2000/fb2k-nocturne/blob/main/README.en.md)
+
 讓 foobar2000 換上深色、串流平台風格的介面：上方專輯標頭、底線式分頁、展開播放頁與歌詞。
 
-下載：https://github.com/openeric2000/fb2k-nocturne/releases （`fb2k-nocturne-v1.00.zip`）
+下載：https://github.com/openeric2000/fb2k-nocturne/releases （中文版 `fb2k-nocturne-v1.10-zh-TW.zip`；英文版是 `fb2k-nocturne-v1.10-en.zip`）
 
 > **只適用全新安裝的 foobar2000。** 解壓會覆蓋介面設定，已經自己調過介面的 fb2k 請先備份整個設定資料夾。
 
@@ -79,7 +81,7 @@ File → Preferences → Media Library → 按「Add...」加入你的音樂資�
 1. 主選單 **View → Layout → 主題字型…**（從左上角 ☰ 按鈕 → View → Layout 也找得到）。
 2. 選字型和整體大小 → 確定。清單、分頁、資料夾樹、播放列、展開頁和上方專輯標頭會一起換掉。
 3. 跳出完成訊息時按「Yes」重開 fb2k，播放列和標頭才會換成新字型。
-4. **歌詞字型要另外設定**：在歌詞上按右鍵 → 面板參數選項 → 字型。
+4. **歌詞字型要另外設定**：在歌詞上按右鍵 → **Panel Options...**，在設定視窗裡改字型。（ESLyric 新裝時是英文介面；在它的設定裡切成中文後，這一項叫「面板參數選項」。）
 
 - 粗細固定用一般粗細。
 - 整體大小（小／標準／大／特大）只放大縮小清單、分頁和資料夾樹，播放列和標頭的大小固定不變。選「標準」就會回到主題原本的大小。

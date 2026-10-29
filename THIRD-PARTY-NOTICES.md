@@ -9,8 +9,8 @@
 - 檔案：`user-components-x64\foo_ui_columns\foo_ui_columns.dll`
 - 版權：Copyright (c) musicmusic and contributors 2003-2025
 - 授權：GNU Lesser General Public License v3（`licenses\columns_ui\COPYING.LESSER`，搭配 `licenses\columns_ui\COPYING` 的 GNU GPL v3）
-- **這是修改版**：以上游 v3.7.1 為基礎，加上 20 個修改（patch 0001～0020，例如展開頁、底線式分頁、主選單按鈕、暫停時凍結進度條、主題字型命令）後重新編譯。
-- 修改版完整原始碼：https://github.com/openeric2000/columns_ui （標籤 `fb2k-nocturne-v1.00`）。每個修改各是一個 commit；用 `git clone --recursive` 會一起抓到修改過的 ui_helpers，編譯方式見該 repo 的 README
+- **這是修改版**：以上游 v3.7.1 為基礎，加上 21 個修改（patch 0001～0021，例如展開頁、底線式分頁、主選單按鈕、暫停時凍結進度條、主題字型命令、中英兩套介面文字）後重新編譯。
+- 修改版完整原始碼：https://github.com/openeric2000/columns_ui （標籤 `fb2k-nocturne-v1.10`）。每個修改各是一個 commit；用 `git clone --recursive` 會一起抓到修改過的 ui_helpers，編譯方式見該 repo 的 README。中文版照原本的方式編譯；英文版另外定義 `NOCTURNE_LANG_EN`（介面文字在 `foo_ui_columns\nocturne_text.h`）
 - 上游原始碼：https://github.com/reupen/columns_ui （標籤 `v3.7.1`）
 - 一起編進這個 DLL 的程式庫：
   - ui_helpers（**有修改**，patch 0019 拿掉深色模式清單欄位標題的分隔線；原始碼 https://github.com/openeric2000/ui_helpers 分支 `fb2k-nocturne`）、mmh、fbh：Copyright (c) Reupen Shah 2003–2017，BSD 3-Clause License（`licenses\columns_ui\ui_helpers-LICENCE`、`mmh-LICENCE`、`fbh-LICENCE`）
@@ -30,12 +30,12 @@
 - 原始碼：https://github.com/reupen/album_list_panel （標籤 `v2.2.0`）
 - 一起編進這個 DLL 的程式庫：ui_helpers、mmh、fbh（BSD 3-Clause）、columns_ui-sdk（0BSD）、foobar2000 SDK、pfc，授權同上
 
-### foo_queue_mirror 1.2.0
+### foo_queue_mirror 1.3.0
 
 - 檔案：`user-components-x64\foo_queue_mirror\foo_queue_mirror.dll`
 - 版權：Copyright (c) 2026 openeric2000
 - 授權：MIT License（`licenses\foo_queue_mirror\LICENSE`）
-- 原始碼：https://github.com/openeric2000/foo_queue_mirror （標籤 `v1.2.0`）
+- 原始碼：https://github.com/openeric2000/foo_queue_mirror （標籤 `v1.3.0`）
 
 ## 沒有隨包附上，請自己下載
 
