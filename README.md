@@ -6,6 +6,14 @@
 
 下載：https://github.com/openeric2000/fb2k-nocturne/releases （中文版 `fb2k-nocturne-v1.10-zh-TW.zip`；英文版是 `fb2k-nocturne-v1.10-en.zip`）
 
+![主畫面：資料夾樹、專輯標頭、播放清單與播放列](images/main-zh.png)
+
+點一下播放列就能展開播放頁，看大封面和歌詞，再點一下收回：
+
+![展開與收合播放頁](images/expand-collapse.gif)
+
+![展開的播放頁：大封面、曲目資訊與歌詞](images/now-playing-zh.png)
+
 > **只適用全新安裝的 foobar2000。** 解壓會覆蓋介面設定，已經自己調過介面的 fb2k 請先備份整個設定資料夾。
 
 ## 需求
