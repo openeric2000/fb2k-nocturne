@@ -15,19 +15,27 @@ A fresh foobar2000 install is recommended. Installing on a foobar2000 you alread
 
 ## Features
 
+The animations below were recorded with the author's own music library and font; see ["Fonts"](#fonts) to change the font.
+
 ### Now playing view
 
 Click the now playing bar to expand it into a now playing view with a large cover and the lyrics. Click again to collapse it.
 
+![Expanding and collapsing the now playing view](images/expand-collapse-en.webp)
+
 ### Queue
 
-The "Add to Queue" button in the album header adds the whole playlist to the playback queue in order. Select some tracks in the list first and the button becomes "Add Selected (N)" and adds only those. The "Queue" tab shows what is in the queue; select some tracks there and press "Remove from Queue" to take them out.
+The "Add to Queue" button in the album header adds the whole playlist to the playback queue in order. Select some tracks in the list first and the button becomes "Add Selected (N)" and adds only those. The "Queue" tab shows what is in the queue; select some tracks there and press "Remove from Queue" to take them out (press Ctrl+A first to clear the whole queue).
 
-Playing another track (double-click, Enter, or right-click → Play) keeps the queue instead of clearing it. To go back to foobar2000's default behavior, uncheck the option under "Playback queue" on the "Up Next Notice" tab in the settings.
+Playing another track (double-click, Enter, or right-click → Play) keeps the queue instead of clearing it. To go back to foobar2000's default behavior, go to File → Preferences → Display → Columns UI → "Up Next Notice" tab, and under "Playback queue" uncheck "Keep the queue when playing another track".
+
+![Adding four tracks to the queue, looking at the Queue tab, and removing one](images/queue-en.webp)
 
 ### Up Next card
 
-On the expanded now playing view, when a track is about to end (the last 10 seconds by default), an Up Next card appears at the bottom right with the next track's cover, title, artist and a countdown. When the countdown ends, the next track starts. If the next track is one you added to the queue, the card says so. You can adjust the details on the "Up Next Notice" tab in the settings.
+On the expanded now playing view, when a track is about to end (the last 10 seconds by default), an Up Next card appears at the bottom right with the next track's cover, title, artist and a countdown. When the countdown ends, the next track starts. If the next track is one you added to the queue, the card is labeled "Queue". The card is not shown when the playback order is Random or Repeat (track), or when there is no next track. To change the countdown length, the position or what the card shows, go to File → Preferences → Display → Columns UI → "Up Next Notice" tab.
+
+![The Up Next card appears near the end of a track, counts down, and the next track starts](images/up-next-en.webp)
 
 ## Requirements
 
@@ -63,7 +71,7 @@ The authors of these three components do not allow redistribution, so they are n
    | WebView2 (foo_webview2) | Album header at the top | https://www.foobar2000.org/components/view/foo_webview2 | 0.3.28 |
    | Playback Statistics (foo_playcount) | Plays column, "Recently Played" and "Not Played in 6 Months" playlists | https://www.foobar2000.org/components/view/foo_playcount | 3.1.11 |
 
-   **If you already have ESLyric, check its version too**: below 1.0.7.0 (for example 1.0.6.2), the icons in the now playing bar show as empty boxes and there is no play button. Install the new version again as in Step 3 below.
+   **If you already have ESLyric, check its version too**: below 1.0.7.0 (for example 1.0.6.2), the icons in the now playing bar show as empty boxes and there is no play button. Install the new version again as in item 3 below.
 
 3. Open foobar2000 → File → Preferences → Components → click "Install..." and pick each downloaded `.fb2k-component`. After adding all three, click OK and restart foobar2000 when asked.
 4. After the restart, go back to Preferences → Components and check that ESLyric, WebView2 and Playback Statistics are all listed.
