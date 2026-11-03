@@ -9,11 +9,11 @@ This theme package uses the works listed below. For the bundled parts, the full 
 - File: `user-components-x64\foo_ui_columns\foo_ui_columns.dll`
 - Copyright: Copyright (c) musicmusic and contributors 2003-2025
 - License: GNU Lesser General Public License v3 (`licenses\columns_ui\COPYING.LESSER`, together with the GNU GPL v3 in `licenses\columns_ui\COPYING`)
-- **This is a modified version**: based on upstream v3.7.1 with 21 changes (patches 0001–0021, such as the now playing view, underlined tabs, the main menu button, freezing the seek bar while paused, the Theme Font command, and English/Chinese interface text), then rebuilt.
-- Complete source code of the modified version: https://github.com/openeric2000/columns_ui (tag `fb2k-nocturne-v1.10`). Each change is one commit; `git clone --recursive` also fetches the modified ui_helpers. See that repository's README for build instructions. The English build defines `NOCTURNE_LANG_EN` (the interface text is in `foo_ui_columns\nocturne_text.h`).
+- **This is a modified version**: based on upstream v3.7.1 with changes, then rebuilt. Examples: the now playing view, underlined tabs, the main menu button, freezing the seek bar while paused, the Theme Font command, English/Chinese interface text, and, new in v1.20, the Up next toast, the Stopped screen, the Stop button that closes the now playing view, keeping the playback queue when you play another track, and improvements to the progress bar.
+- Complete source code of the modified version: https://github.com/openeric2000/columns_ui (tag `fb2k-nocturne-v1.20`; v1.10 shipped with tag `fb2k-nocturne-v1.10`). The changes are in the commit history, one or a few commits per feature; `git clone --recursive` also fetches the modified ui_helpers. See that repository's README for build instructions. The English build defines `NOCTURNE_LANG_EN` (the interface text is in `foo_ui_columns\nocturne_text.h`).
 - Upstream source code: https://github.com/reupen/columns_ui (tag `v3.7.1`)
 - Libraries compiled into this DLL:
-  - ui_helpers (**modified**: patch 0019 removes the dividers between list column headers in dark mode; source https://github.com/openeric2000/ui_helpers branch `fb2k-nocturne`), mmh, fbh: Copyright (c) Reupen Shah 2003–2017, BSD 3-Clause License (`licenses\columns_ui\ui_helpers-LICENCE`, `mmh-LICENCE`, `fbh-LICENCE`)
+  - ui_helpers (**modified**: in dark mode the dividers between list column headers are only shown for the column under the mouse; source https://github.com/openeric2000/ui_helpers branch `fb2k-nocturne`, tag `fb2k-nocturne-v1.20`), mmh, fbh: Copyright (c) Reupen Shah 2003–2017, BSD 3-Clause License (`licenses\columns_ui\ui_helpers-LICENCE`, `mmh-LICENCE`, `fbh-LICENCE`)
   - columns_ui-sdk, svg-services interfaces: Reupen Shah, 0BSD (`columns_ui-sdk-LICENCE`, `svg-services-LICENCE`)
   - foobar2000 SDK: Copyright (c) Peter Pawlowski, BSD-style license (`licenses\columns_ui\foobar2000-sdk-license.txt`)
   - pfc: Copyright (C) Peter Pawlowski, zlib-style license (`licenses\columns_ui\pfc-license.txt`)
@@ -30,12 +30,24 @@ This theme package uses the works listed below. For the bundled parts, the full 
 - Source code: https://github.com/reupen/album_list_panel (tag `v2.2.0`)
 - Libraries compiled into this DLL: ui_helpers, mmh, fbh (BSD 3-Clause), columns_ui-sdk (0BSD), foobar2000 SDK, pfc; licenses as above
 
-### foo_queue_mirror 1.3.0
+### foo_queue_mirror 1.3.1
 
 - File: `user-components-x64\foo_queue_mirror\foo_queue_mirror.dll`
 - Copyright: Copyright (c) 2026 openeric2000
 - License: MIT License (`licenses\foo_queue_mirror\LICENSE`)
-- Source code: https://github.com/openeric2000/foo_queue_mirror (tag `v1.3.0`)
+- Source code: https://github.com/openeric2000/foo_queue_mirror (tag `v1.3.1`)
+
+### ESLyric lyric source and parser scripts
+
+- Files: `eslyric-data\scripts\searcher\` (kugou.js, lrclib.js, minilyrics.js, musixmatch.js, netease.js, netease_en.js, qqmusic.js), `eslyric-data\scripts\parser\` (krc.js, qrc.js, srt.js), `eslyric-data\scripts\lib\`
+- Origin: the official ESLyric script repository https://github.com/ESLyric/scripts (the "Get More..." button in the ESLyric settings downloads from there too), unmodified. The authors named in the file headers are ohyeah, wistaria, anonymous and TT (https://github.com/TT-ReBORN; lrclib, minilyrics, musixmatch and netease_en contain his changes or rewrites). The scripts also credit Binaryify/NeteaseCloudMusicApi, jsososo/QQMusicApi, xmcp/QRCD and olee/minilyrics-proxy.
+- **License: neither these scripts nor the official ESLyric script repository come with a license, and the authors have not explicitly allowed redistribution.** They are included only so that users do not have to hunt for scripts themselves; they will be removed immediately if an author asks. If you prefer not to use them, delete the whole `eslyric-data\scripts` folder and download scripts yourself with "Get More..." in the ESLyric settings when you need them.
+- Libraries used by the scripts (`lib\`, only the files needed at run time):
+  - crypto-es: Copyright (c) 2018-2020 LIN Chen, MIT License (`licenses\eslyric-scripts\crypto-es-LICENSE`)
+  - himalaya: Copyright (c) 2017 Chris Andrejewski, ISC License (`licenses\eslyric-scripts\himalaya-LICENSE`)
+  - querystring: Copyright (c) 2013 Greg Allen, MIT License (`licenses\eslyric-scripts\querystring-LICENSE`)
+  - parser_ext.so: an extension module for parsing QRC lyrics (the header of `qrc.js` names wistaria as the author); no license information
+- These scripts contact the servers of NetEase Cloud Music, Kugou, QQ Music, LRCLIB, MiniLyrics and Musixmatch to search for lyrics; see the README for details.
 
 ## Not bundled, please download yourself
 

@@ -4,9 +4,14 @@
 
 A dark, streaming-style look for foobar2000: an album header on top, underlined playlist tabs, and an expandable now playing view with lyrics.
 
-Download: https://github.com/openeric2000/fb2k-nocturne/releases (English: `fb2k-nocturne-v1.10-en.zip`; Traditional Chinese: `fb2k-nocturne-v1.10-zh-TW.zip`)
+Download: https://github.com/openeric2000/fb2k-nocturne/releases . There are two kinds of ZIP for each language:
 
-> **For a fresh foobar2000 install only.** The ZIP overwrites the interface settings. If you have already customized your foobar2000 interface, back up the whole profile folder first.
+| | English | Traditional Chinese | When to use it |
+|---|---|---|---|
+| **Full** (install) | `fb2k-nocturne-v1.20-en.zip` | `fb2k-nocturne-v1.20-zh-TW.zip` | The first installation, or when you want the theme to replace your whole interface setup |
+| **Update** | `fb2k-nocturne-v1.20-update-en.zip` | `fb2k-nocturne-v1.20-update-zh-TW.zip` | You already have Nocturne and only want a newer version (your playlists and other settings stay; the ESLyric settings are replaced with the theme's) |
+
+> **A fresh foobar2000 install is recommended.** You can also install the theme on a foobar2000 you already use, but the installation overwrites your interface settings, fonts and playlists, so back up the whole profile folder first. See "Installing on a foobar2000 you already use" below. If you already have Nocturne and only want a newer version, see "Updating to a new version".
 
 ## Requirements
 
@@ -15,6 +20,15 @@ Download: https://github.com/openeric2000/fb2k-nocturne/releases (English: `fb2k
 - Microsoft Edge WebView2 Runtime (built into Windows 11; most Windows 10 PCs already have it)
 
 ## Installation
+
+Find your situation first:
+
+| Your situation | What to do |
+|----------------|------------|
+| A fresh foobar2000 (recommended) | Follow Steps 1-4 below |
+| A foobar2000 you already use, without Nocturne | **Back up the profile folder first**, then follow Steps 1-4 (**ESLyric must be 1.0.7.0 or newer**; update it first if it is older). Your interface settings, fonts, Album list settings, **ESLyric settings** and playlists are replaced by the theme's; see "Installing on a foobar2000 you already use" |
+| Nocturne already installed (for example v1.10), and you want a newer version in the same language | Download the **Update** ZIP and see "Updating to a new version": your playlists and other settings stay (the ESLyric settings are replaced with the theme's) |
+| Switching from the Chinese version to the English one (or the other way round) | **Overwrite everything** with the **Full** ZIP (as in Step 2). Do not use the Update ZIP, or the now playing bar will be blank |
 
 ### Step 1: Install foobar2000 and three required components (do this first)
 
@@ -27,14 +41,18 @@ The authors of these three components do not allow redistribution, so they are n
 
    | Component | Used for | Download | Tested version |
    |-----------|----------|----------|----------------|
-   | ESLyric | Now playing bar, now playing view, lyrics | https://github.com/ESLyric/release/releases | 1.0.7.0 |
+   | ESLyric | Now playing bar, now playing view, lyrics | https://github.com/ESLyric/release/releases | 1.0.7.0 (**older versions do not work**) |
    | WebView2 (foo_webview2) | Album header at the top | https://www.foobar2000.org/components/view/foo_webview2 | 0.3.28 |
    | Playback Statistics (foo_playcount) | Plays column, "Recently Played" and "Not Played in 6 Months" playlists | https://www.foobar2000.org/components/view/foo_playcount | 3.1.11 |
+
+   **If you already have ESLyric, check its version too**: below 1.0.7.0 (for example 1.0.6.2), the icons in the now playing bar show as empty boxes and there is no play button. Install the new version again as in Step 3 below.
 
 3. Open foobar2000 → File → Preferences → Components → click "Install..." and pick each downloaded `.fb2k-component`. After adding all three, click OK and restart foobar2000 when asked.
 4. After the restart, go back to Preferences → Components and check that ESLyric, WebView2 and Playback Statistics are all listed.
 
 ### Step 2: Close foobar2000 and copy the ZIP contents into the profile folder
+
+(This step uses the **Full** ZIP.)
 
 1. File → Exit to close foobar2000.
 2. Open the foobar2000 profile folder:
@@ -53,12 +71,85 @@ After copying, folders such as `user-components-x64`, `configuration`, `eslyric-
 
 File → Preferences → Media Library → click "Add..." and add your music folders. The folder tree on the left follows your folder structure.
 
-### Where lyrics are saved
+### Lyrics: where they come from, where they are saved, where to change settings
 
-Lyrics found during playback are saved automatically to the `lyrics` folder inside the foobar2000 profile folder. Nothing to set up:
+The ESLyric settings are already tuned for you (they are installed together with the theme), and lyrics are searched for automatically during playback:
+
+1. First, lyric files on your computer: in the same folder as the song, or in the `lyrics` folder inside the foobar2000 profile folder.
+2. Only if nothing is found, ESLyric **goes online** and searches NetEase Cloud Music, Kugou, QQ Music, NetEase English, LRCLIB, MiniLyrics and Musixmatch. **This sends the song title and artist to those services**; how to turn it off is below.
+
+Synced lyrics that are found are saved automatically to the `lyrics` folder inside the foobar2000 profile folder. Nothing to set up:
 
 - Portable: `foobar2000\profile\lyrics\`
 - Installed: `%APPDATA%\foobar2000-v2\lyrics\`
+
+To change the lyric settings, go to File → Preferences → Tools → **ESLyric**:
+
+- Do not want online searches: under "Lyric Options" turn off "Automatically search on playback start", or untick the sources you do not want under "Lyric Sources" (the built-in "Local File" source only reads lyric files on your computer).
+- Want more lyric sources: "Get More..." at the top right of the "Lyric Sources" page.
+- Where lyrics are saved and when: "Save Settings".
+
+### Optional: a keyboard shortcut that jumps to the playing track
+
+In a long playlist it can be hard to see which track is playing. You can give foobar2000's "Activate now playing" a keyboard shortcut; one key press finds the playing track in the list and selects it. Shortcuts are foobar2000's own settings, so the theme does not assign one for you. Set it up once (the example below uses `F4`; use any key you like):
+
+1. File → Preferences → **Keyboard Shortcuts**, then click **Add new**.
+2. In the Action section, type `Activate now playing` into "Filter list by", then click **View → Playlist view → Activate now playing** in the list.
+3. Click the **Key** field at the bottom and press the key you want (`F4` in the example), then click Apply → OK.
+
+![Keyboard Shortcuts: assigning F4 to Activate now playing](images/keyboard-shortcut-activate-now-playing.png)
+
+## Installing on a foobar2000 you already use
+
+You can, but know this first: in Step 2, when you copy the ZIP contents and choose "Replace the files in the destination", **your current interface settings are replaced with the theme's**. So back up first.
+
+### Back up first
+
+1. File → Exit to close foobar2000.
+2. Copy the whole profile folder to somewhere else (portable: the `profile` folder next to `foobar2000.exe`; installed: `%APPDATA%\foobar2000-v2`).
+3. To go back later, close foobar2000, copy the backup back into the profile folder and choose "Replace" when asked.
+
+### What gets replaced
+
+- **Interface settings**: the Columns UI layout, the playlist columns, colours, the status bar and so on are replaced with the theme's. If you already use Columns UI and have customized the layout, your changes will be gone (an official Columns UI you installed is simply replaced by the theme's modified one; they do not conflict).
+- **Fonts**: the fonts of the lists, tabs, folder tree, now playing bar, now playing view and album header go back to the theme's default, Segoe UI. To use another font, choose it again in View → Layout → Theme Font….
+- **Album list settings**.
+- **ESLyric settings**: the lyric sources and their order, the search and save settings, the desktop lyric and so on are replaced with the theme's. Lyrics are now saved to the `lyrics` folder inside the foobar2000 profile folder; lyric files you kept somewhere else are not deleted, but ESLyric no longer looks there or saves there. To keep your own ESLyric settings, choose "Skip" for the file `configuration\foo_uie_eslyric.dll.cfg` when copying the ZIP contents, **and do not copy** the `eslyric-data\scripts` folder (if you skip only the settings file but copy the scripts, the 7 online sources appear at the end of your source list, ticked).
+- **Album header page**: if you put your own page in `webview\default\` in the profile folder, it is replaced by the theme's.
+- **Playlists**: the five playlists that come with the theme (Selected Folder, Queue, Recently Added, Recently Played, Not Played in 6 Months) go back to their defaults. Other playlists you made are not deleted, but they no longer appear in the playlist tabs (restoring your backup brings them back).
+
+### What is not affected
+
+- foobar2000's own settings: output device, media library folders, keyboard shortcuts, DSP and so on.
+- Your media library and play counts.
+- The lyric files you have already saved (but your ESLyric settings are replaced, see above).
+- The settings of other components.
+
+### If you do not want to touch your current foobar2000
+
+Install a separate **portable** foobar2000 and try the theme there. The one you use now is not touched at all.
+
+## Updating to a new version
+
+If you already have Nocturne and want a newer version **in the same language**, download the **Update** ZIP (its name contains `update`, for example `fb2k-nocturne-v1.20-update-en.zip`). It contains the theme's own files and the **complete ESLyric settings** (layout, online lyric source scripts, ESLyric settings file), and **does not contain** your playlists or the settings of the other components, so you can simply extract it over your profile folder:
+
+1. File → Exit to close foobar2000.
+2. Open the foobar2000 profile folder (portable: the `profile` folder next to `foobar2000.exe`; installed: `%APPDATA%\foobar2000-v2`).
+3. In File Explorer, double-click the Update ZIP to open it → Ctrl+A → Copy → paste into the profile folder. When asked about existing files, choose "Replace the files in the destination". (File Explorer merges the folders and only replaces files with the same name, so your other components and files are not deleted.)
+4. Start foobar2000 again.
+
+The Update ZIP replaces: `user-components-x64` (the DLLs of the three components), `eslyric-data` (the layout `main.xml` and the online lyric source scripts), `webview` (the album header page) and `configuration\foo_uie_eslyric.dll.cfg` (the ESLyric settings). The other settings files in `configuration` and `playlists-v2.0` are not in it, so your playlists and Columns UI settings stay as they are.
+
+Notes:
+
+- **The fonts of the now playing bar, now playing view and album header go back to the default**, because they are stored in `main.xml` and `index.html`. Choose your font again in View → Layout → Theme Font… (the fonts of the lists, tabs and folder tree are not affected).
+- **What is inside the settings files is not updated.** When updating from v1.10 to this version, that applies to the display script of the first playlist column (▶): it keeps working without the update; the only difference is that after you switch folders with Album list and back, newly added tracks may not show ▶. To switch to the new script: File → Preferences → Display → Columns UI → Playlist view → "Columns" tab, select the first column (▶), open the "Display script" tab, replace the content with the line below, click Apply in that section, then OK:
+
+  `$if($or(%isplaying%,%cui_now_playing_file%),$if(%ispaused%,❚❚,▶),[%queue_indexes%])`
+
+- **Your ESLyric settings are replaced with the theme's.** That includes the 7 online lyric sources (NetEase Cloud Music, Kugou, QQ Music, NetEase English, LRCLIB, MiniLyrics and Musixmatch) and their order, the search and save settings, the desktop lyric and so on. **When no local lyrics are found, ESLyric goes online during playback and sends the song title and artist to those services**; how to turn that off is described above in "Lyrics: where they come from, where they are saved, where to change settings". Lyrics are now saved to the `lyrics` folder inside the foobar2000 profile folder; lyric files you kept somewhere else are not deleted, but ESLyric no longer looks there or saves there. **To keep your own ESLyric settings**, choose "Skip" for `configuration\foo_uie_eslyric.dll.cfg` when copying, **and do not copy** the `eslyric-data\scripts` folder. If you skip only the settings file but copy the scripts, the 7 online sources appear at the end of your source list, ticked, in file-name order.
+- **To switch language (Chinese version to English, or the other way round), do not use the Update ZIP.** Overwrite everything with the Full ZIP (after making a backup). The settings files still remember the names of the other language, so replacing only the theme files leaves the now playing bar blank.
+- If you are not sure, overwrite everything with the Full ZIP as described in "Installing on a foobar2000 you already use" above, after making a backup.
 
 ## Fonts
 
@@ -82,6 +173,7 @@ After downloading, right-click the font file → "Install" (or "Install for all 
 2. Pick a font and an overall size → OK. The lists, tabs, folder tree, now playing bar, now playing view and album header all change together.
 3. When the message appears, click "Yes" to restart foobar2000 so the now playing bar and album header pick up the new font.
 4. **The lyrics font is set separately**: right-click the lyrics → **Panel Options...** and change the font there.
+5. The desktop lyric (off by default) has its own font: File → Preferences → Tools → ESLyric → Desktop Lyric → Display settings.
 
 - The weight is always Regular.
 - The overall size (Small / Standard / Large / Extra Large) only scales the lists, tabs and folder tree; the now playing bar and album header keep their size. Choose "Standard" to go back to the theme's original size.
@@ -96,5 +188,6 @@ To fine-tune individual items, go to File → Preferences → Display → Column
 
 ## License
 
-- The theme itself (ESLyric layout, album header page, settings files, default playlists, documentation): MIT License, see [LICENSE](LICENSE)
+- The theme itself (ESLyric layout and settings file, album header page, settings files, default playlists, documentation): MIT License, see [LICENSE](LICENSE)
+- The bundled ESLyric lyric source scripts come from the official ESLyric script repository and have no license of their own; see [THIRD-PARTY-NOTICES.en.md](THIRD-PARTY-NOTICES.en.md) for their origin and details
 - The modified Columns UI and the other bundled components: see [THIRD-PARTY-NOTICES.en.md](THIRD-PARTY-NOTICES.en.md)
