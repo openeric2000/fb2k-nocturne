@@ -4,7 +4,7 @@
 
 A dark, streaming-style look for foobar2000: an album header on top, underlined playlist tabs, and an expandable now playing view with lyrics.
 
-Nocturne is built around **folder structure**. I sort my music into nested folders, so the interface centers on two things: the folder tree on the left and the album header at the top. Click any level and the header shows that level's name, plus the artist, year, track count and total length ([see the demo](https://openeric2000.github.io/fb2k-nocturne/), which uses fake data). The expandable now playing view, the lyrics and the Up Next card make listening look and feel good, too.
+Nocturne is built around **folder structure**: I sort my music into nested folders, so the interface centers on the folder tree on the left and the album header at the top. The expandable now playing view, the lyrics and the Up Next card make listening look and feel good, too.
 
 Download: https://github.com/openeric2000/fb2k-nocturne/releases
 
