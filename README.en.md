@@ -4,12 +4,14 @@
 
 A dark, streaming-style look for foobar2000: an album header on top, underlined playlist tabs, and an expandable now playing view with lyrics.
 
-Nocturne is built around **folder structure**: I sort my music into nested folders, so the interface centers on the folder tree on the left and the album header at the top. The expandable now playing view, the lyrics and the Up Next card make listening look and feel good, too.
+Nocturne is built around **folder structure**: I sort my music into nested folders, so the interface centers on the folder tree on the left and the album header at the top, which shows the name, artist, year, track count and total length of whichever level you click.
+
+![Main window: folder tree, album header, playlist and playback bar](images/main-en.png)
 
 Download: https://github.com/openeric2000/fb2k-nocturne/releases
 
-- First installation: download the **Full** ZIP, `fb2k-nocturne-v1.20-en.zip` (English) or `fb2k-nocturne-v1.20-zh-TW.zip` (Traditional Chinese).
-- You already have Nocturne and only want a newer version: download the **Update** ZIP, `fb2k-nocturne-v1.20-update-en.zip` (English) or `fb2k-nocturne-v1.20-update-zh-TW.zip` (Traditional Chinese). Your playlists and other settings stay; the ESLyric settings are replaced with the theme's. See ["Updating to a new version"](#updating-to-a-new-version).
+- First installation: download the **Full** ZIP.
+- You already have Nocturne: download the **Update** ZIP; see ["Updating to a new version"](#updating-to-a-new-version).
 
 A fresh foobar2000 install is recommended. Installing on a foobar2000 you already use overwrites your interface settings, fonts and playlists, so back up first; see ["Installation"](#installation).
 
@@ -23,25 +25,45 @@ Click the now playing bar to expand it into a now playing view with a large cove
 
 ![Expanding and collapsing the now playing view](images/expand-collapse-en.webp)
 
+### Output device
+
+The playback bar shows which device the sound is going to: an output type on the left (Default, Exclusive, ASIO, Muted) and the device name on the right. Hover over it to see the full name and the output mode; click it to switch device.
+
+![Output device: hover for the info, click for the device list](images/output-device-en.webp)
+
+- To change the displayed name: File → Preferences → Tools → Nocturne → "Playback" → "Edit device names...". Write one line per device as "text the device name contains=name to show", for example `Holo Audio=DAC (Holo Audio)`. It takes effect right after you save.
+- To turn it off: untick "Show the current output device in the playback bar" on the same page.
+
+### Mouse wheel on the progress bar
+
+Put the mouse over the progress bar and scroll to seek: up to go forward, down to go back, 5 seconds per notch, or 30 seconds per notch while holding Shift. You can change the seconds on the "Playback" tab of the preferences, or turn it off.
+
 ### Queue
 
-The "Add to Queue" button in the album header adds the whole playlist to the playback queue in order. Select some tracks in the list first and the button becomes "Add Selected (N)" and adds only those. The "Queue" tab shows what is in the queue; select some tracks there and press "Remove from Queue" to take them out (press Ctrl+A first to clear the whole queue).
-
-Playing another track (double-click, Enter, or right-click → Play) keeps the queue instead of clearing it. To go back to foobar2000's default behavior, go to File → Preferences → Display → Columns UI → "Up Next Notice" tab, and under "Playback queue" uncheck "Keep the queue when playing another track".
+The "Add to Queue" button in the album header adds the whole playlist to the playback queue; select some tracks first and it adds only those. The "Queue" tab shows what is in the queue: select some tracks and press "Remove Selected (N)" to take only those out; with nothing selected, press "Remove from Queue" and press again within 3 seconds to clear the whole queue.
 
 ![Adding four tracks to the queue, looking at the Queue tab, and removing one](images/queue-en.webp)
 
+Playing another track (double-click, Enter, or right-click → Play) keeps the queue by default. To go back to foobar2000's default behavior (playing another track clears the queue), go to File → Preferences → Tools → Nocturne → "Queue" tab and untick "Keep the queue when playing another track (double-click, Enter, Play)".
+
 ### Up Next card
 
-On the expanded now playing view, when a track is about to end (the last 10 seconds by default), an Up Next card appears at the bottom right with the next track's cover, title, artist and a countdown. When the countdown ends, the next track starts. If the next track is one you added to the queue, the card is labeled "Queue". The card is not shown when the playback order is Random or Repeat (track), or when there is no next track. To change the countdown length, the position or what the card shows, go to File → Preferences → Display → Columns UI → "Up Next Notice" tab.
+On the expanded now playing view, when a track is about to end, an Up Next card appears at the bottom right with the next track's cover, title, artist and a countdown; when it reaches 0, the next track starts. The countdown length, position and card size can be changed in File → Preferences → Tools → Nocturne → "Up Next Notice" tab.
 
 ![The Up Next card appears near the end of a track, counts down, and the next track starts](images/up-next-en.webp)
+
+### Preferences page
+
+The theme's own settings are in File → Preferences → Tools → Nocturne and take effect immediately. See ["Fonts"](#fonts) below for changing the fonts.
+
+![The six tabs of the Nocturne preferences page](images/settings-en.webp)
 
 ## Requirements
 
 - Windows 10 or 11
 - foobar2000 2.x **64-bit** (32-bit is not supported)
 - Microsoft Edge WebView2 Runtime (built into Windows 11; most Windows 10 PCs already have it)
+- An SSD is recommended. On an HDD the window takes a long time to appear on the first launch, and the startup fade-in does not take effect; from the second launch on, with the files cached, the fade-in shows up.
 
 ## Installation
 
@@ -53,7 +75,7 @@ Find your situation first:
 |----------------|------------|
 | A fresh foobar2000 (recommended) | Follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first) below |
 | A foobar2000 you already use, without Nocturne | **Back up the profile folder first**, then follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first) (ESLyric must be 1.0.7.0 or newer; update it first if it is older). Your interface settings, fonts, Album list settings, ESLyric settings and playlists are replaced by the theme's; see ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use) |
-| Nocturne already installed (for example v1.10), and you want a newer version in the same language | Download the Update ZIP and see ["Updating to a new version"](#updating-to-a-new-version): your playlists and other settings stay (the ESLyric settings are replaced with the theme's) |
+| Nocturne already installed (for example v1.20), and you want a newer version in the same language | Download the Update ZIP and see ["Updating to a new version"](#updating-to-a-new-version): your playlists and other settings stay (the ESLyric settings are replaced with the theme's) |
 | Switching from the Chinese version to the English one (or the other way round) | Overwrite everything with the Full ZIP (as in [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder)). Do not use the Update ZIP, or the now playing bar will be blank |
 
 ### Step 1: Install foobar2000 and three required components (do this first)
@@ -155,7 +177,7 @@ Install a separate portable foobar2000 and try the theme there. The one you use 
 
 ## Updating to a new version
 
-If you already have Nocturne and want a newer version **in the same language**, download the Update ZIP (its name contains `update`, for example `fb2k-nocturne-v1.20-update-en.zip`). It contains the theme's own files and the complete ESLyric settings (layout, online lyric source scripts, ESLyric settings file), and does not contain your playlists or the settings of the other components, so you can simply extract it over your profile folder:
+If you already have Nocturne and want a newer version **in the same language**, download the Update ZIP (its name contains `update`, for example `fb2k-nocturne-v1.30-update-en.zip`). It contains the theme's own files and the complete ESLyric settings (layout, online lyric source scripts, ESLyric settings file), and does not contain your playlists or the settings of the other components, so you can simply extract it over your profile folder:
 
 1. File → Exit to close foobar2000.
 2. Open the profile folder (see the start of ["Installation"](#installation)).
@@ -166,8 +188,11 @@ The Update ZIP replaces: `user-components-x64` (the DLLs of the three components
 
 Notes:
 
-- The fonts of the now playing bar, now playing view and album header go back to the default, because they are stored in `main.xml` and `index.html`. Choose your font again in View → Layout → Theme Font… (the fonts of the lists, tabs and folder tree are not affected).
-- What is inside the settings files is not updated. When updating from v1.10 to this version, that applies to the display script of the first playlist column (▶): it keeps working without the update; the only difference is that after you switch folders with Album list and back, newly added tracks may not show ▶. To switch to the new script: File → Preferences → Display → Columns UI → Playlist view → "Columns" tab, select the first column (▶), open the "Display script" tab, replace the content with the line below, click Apply in that section, then OK:
+- **The volume bar is collapsed to an icon by default.** Since v1.30 the theme collapses the volume bar to a speaker icon at the far right of the playback bar by default (hover over it and a slider pops up). Your Nocturne settings (including this one) are stored in the Columns UI settings file, which the Update ZIP does not contain, so after updating you get the new default. To get the original volume bar back: File → Preferences → Tools → Nocturne → "Playback", untick "Collapse the volume bar to an icon". On a screen with Windows display scaling of 125% or more it is better to leave it on: the volume bar needs a wider window, and when the scaling is large and the window narrow, the dB readout or the volume bar on the right gets cut off by the window edge (the check box on the preferences page carries the same hint).
+- **The columns of the playlist are not updated.** In a fresh v1.30 installation the playlist uses auto-size columns: when the window is narrow (for example a 1920×1080 screen with Windows scaling at 125%) the File Name and Artist columns shrink with it and every column stays visible. The Update ZIP does not contain the Columns UI settings file, so your columns stay as they are, and at a larger scaling the columns on the right may be cut off with a horizontal scroll bar. To switch to the new column widths: go to the Release page of this version and download `fb2k-nocturne-v1.30-playlist-columns-en.fcl` (the Chinese version has `fb2k-nocturne-v1.30-playlist-columns-zh-TW.fcl`) from the list of files; these two files are not inside any ZIP. Then go to File → Preferences → Display → Columns UI → "Setup" tab → "Import configuration…", pick it; in the "Select settings to import" window keep the default ticks and click OK. **This replaces your current playlist column settings (which columns are shown, their order and widths) with the theme's defaults**, so write down your own adjustments first.
+- The Update ZIP replaces the layout file `eslyric-data\layout\fb2k-modern\main.xml`. If you have edited it, back it up before updating.
+- The fonts of the now playing bar, now playing view and album header go back to the default, because they are stored in `main.xml` and `index.html`. Choose your font again in Tools → Nocturne → "Fonts" or in View → Layout → Theme Font… (the fonts of the lists, tabs and folder tree are not affected).
+- What is inside the settings files is not updated. When updating from v1.00 or v1.10 to v1.20 or newer, that applies to the display script of the first playlist column (▶): it keeps working without the update; the only difference is that after you switch folders with Album list and back, newly added tracks may not show ▶. To switch to the new script: File → Preferences → Display → Columns UI → Playlist view → "Columns" tab, select the first column (▶), open the "Display script" tab, replace the content with the line below, click Apply in that section, then OK:
 
   `$if($or(%isplaying%,%cui_now_playing_file%),$if(%ispaused%,❚❚,▶),[%queue_indexes%])`
 
@@ -192,6 +217,14 @@ These free fonts cover both Chinese and Japanese well. Tested against about 100,
 After downloading, right-click the font file → "Install" (or "Install for all users"), then change the theme font as described below.
 
 ### Changing the theme font
+
+**To change everything at once**, use "Theme Font…" below. **To change one area at a time**, go to File → Preferences → Tools → Nocturne → "Fonts" tab. The top row, "All parts", is the same as "Theme Font…", and the six rows below each control one area:
+
+- Playlist, Playlist tabs, Folder tree, Other interface text: both the font and the size can be changed, and it is applied immediately.
+- Now playing bar and view, Album header: only the font can be changed (the size is fixed), it takes effect after restarting foobar2000, and a "Restart now" button appears at the bottom of the tab once you change one.
+- The lyrics font is not here; see step 4 below.
+
+Steps for "Theme Font…":
 
 1. Main menu View → Layout → Theme Font… (also available from the ☰ button at the top left → View → Layout).
 2. Pick a font and an overall size → OK. The lists, tabs, folder tree, now playing bar, now playing view and album header all change together.

@@ -10,7 +10,7 @@
 - 版權：Copyright (c) musicmusic and contributors 2003-2025
 - 授權：GNU Lesser General Public License v3（`licenses\columns_ui\COPYING.LESSER`，搭配 `licenses\columns_ui\COPYING` 的 GNU GPL v3）
 - **這是修改版**：以上游 v3.7.1 為基礎，加上修改後重新編譯，例如展開頁、底線式分頁、主選單按鈕、暫停時凍結進度條、主題字型命令、中英兩套介面文字，以及 v1.20 新增的下一首提示、已停止畫面、停止鈕收起展開頁、播放別首歌時保留播放佇列，還有進度條的改進。
-- 修改版完整原始碼：https://github.com/openeric2000/columns_ui （標籤 `fb2k-nocturne-v1.20`；v1.10 附的是標籤 `fb2k-nocturne-v1.10`）。修改都在 commit 歷史裡，一個功能一個或數個 commit；用 `git clone --recursive` 會一起抓到修改過的 ui_helpers，編譯方式見該 repo 的 README。中文版照原本的方式編譯；英文版另外定義 `NOCTURNE_LANG_EN`（介面文字在 `foo_ui_columns\nocturne_text.h`）
+- 修改版完整原始碼：https://github.com/openeric2000/columns_ui （標籤 `fb2k-nocturne-v1.30`；v1.20 附的是標籤 `fb2k-nocturne-v1.20`，v1.10 附的是標籤 `fb2k-nocturne-v1.10`）。修改都在 commit 歷史裡，一個功能一個或數個 commit；用 `git clone --recursive` 會一起抓到修改過的 ui_helpers，編譯方式見該 repo 的 README。中文版照原本的方式編譯；英文版另外定義 `NOCTURNE_LANG_EN`（介面文字在 `foo_ui_columns\nocturne_text.h`）
 - 上游原始碼：https://github.com/reupen/columns_ui （標籤 `v3.7.1`）
 - 一起編進這個 DLL 的程式庫：
   - ui_helpers（**有修改**：深色模式清單欄位標題之間的分隔線，只在滑鼠停的那一欄顯示；原始碼 https://github.com/openeric2000/ui_helpers 分支 `fb2k-nocturne`，標籤 `fb2k-nocturne-v1.20`）、mmh、fbh：Copyright (c) Reupen Shah 2003–2017，BSD 3-Clause License（`licenses\columns_ui\ui_helpers-LICENCE`、`mmh-LICENCE`、`fbh-LICENCE`）
@@ -30,12 +30,12 @@
 - 原始碼：https://github.com/reupen/album_list_panel （標籤 `v2.2.0`）
 - 一起編進這個 DLL 的程式庫：ui_helpers、mmh、fbh（BSD 3-Clause）、columns_ui-sdk（0BSD）、foobar2000 SDK、pfc，授權同上
 
-### foo_queue_mirror 1.3.1
+### foo_queue_mirror 1.3.2
 
 - 檔案：`user-components-x64\foo_queue_mirror\foo_queue_mirror.dll`
 - 版權：Copyright (c) 2026 openeric2000
 - 授權：MIT License（`licenses\foo_queue_mirror\LICENSE`）
-- 原始碼：https://github.com/openeric2000/foo_queue_mirror （標籤 `v1.3.1`）
+- 原始碼：https://github.com/openeric2000/foo_queue_mirror （標籤 `v1.3.2`）
 
 ### ESLyric 歌詞來源與解析器腳本
 
