@@ -63,7 +63,7 @@ v1.40 新增：展開頁的封面虛化背景、細捲軸、資料夾搜尋框�
 
 主題自己的設定在 File → Preferences → Tools → Nocturne，分成播放、下一首與佇列、字型、介面、關於五個分頁，改了立刻生效。
 
-![Nocturne 設定頁](images/settings-zh.webp)
+![Nocturne 設定頁](images/settings-zh-v140.webp)
 
 ## 需求
 

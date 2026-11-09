@@ -63,7 +63,7 @@ On the expanded now playing view, when a track is about to end, an Up Next card 
 
 The theme's own settings are in File → Preferences → Tools → Nocturne, split into five tabs (Playback, Up Next & Queue, Fonts, Interface, About), and take effect immediately.
 
-![The Nocturne preferences page](images/settings-en.webp)
+![The Nocturne preferences page](images/settings-en-v140.webp)
 
 ## Requirements
 
