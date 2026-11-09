@@ -248,7 +248,6 @@ Give foobar2000's "Activate now playing" a keyboard shortcut and one key press f
 - **Do not replace Columns UI through foobar2000's component updates.** This theme uses a modified Columns UI; the official version lacks the now playing view, the underlined tabs and other features.
 - **The same goes for Album list (since v1.40).** The theme ships a modified version; the official one lacks the new search box and the "Search Album list" command. Put the file from the ZIP back if that happens.
 - To go back to plain foobar2000: delete the whole profile folder, then reinstall or re-extract the official version.
-- So far tested only on Windows 10 (Traditional Chinese edition) with foobar2000 2.26.1. Not yet tested on English Windows or on Windows 11 (where the Segoe MDL2 Assets font used by the now playing bar icons and the ☰ button has not been checked).
 
 ## License
 
