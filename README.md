@@ -224,7 +224,7 @@ fb2k 預設把歌詞存在上面那個 `lyrics` 資料夾。如果你想把歌�
 
 注意：
 
-- **想保留自己的 Columns UI 設定**：複製時對 `configuration\foo_ui_columns.dll.cfg` 選「略過這個檔案」。代價是封面虛化背景不會出現、歌曲清單欄位維持舊的；其他新功能照常。只想更新欄位的話，到這個版本的 Release 頁面另外下載 `fb2k-nocturne-v1.40-playlist-columns-zh-TW.fcl`（英文版是 `-en.fcl`，不在任何 ZIP 裡），File → Preferences → Display → Columns UI →「Setup」分頁 →「Import configuration…」選它，保持預設勾選按 OK（會取代你的歌曲清單欄位設定）。
+- **想保留自己的 Columns UI 設定**：複製時對 `configuration\foo_ui_columns.dll.cfg` 選「略過這個檔案」。代價是封面虛化背景不會出現、歌曲清單欄位維持舊的；其他新功能照常。
 - 自己改過 `main.xml` 或字型的話，更新後要重新改一次：播放列、展開頁和專輯標頭的字型會回到預設，用「Tools → Nocturne →『字型』」或「View → Layout → 主題字型…」再選一次就好。
 - ESLyric 的設定會換成主題附的，包括 7 個線上歌詞來源和它們的順序、搜尋與存檔設定、桌面歌詞等。沒有本機歌詞時，播放時會連線搜尋；不想連線的做法見上面[「歌詞：怎麼找、存在哪裡、設定在哪」](#歌詞怎麼找存在哪裡設定在哪)。想保留自己的 ESLyric 設定，做法見上面[「會被換掉的」](#會被換掉的)裡 ESLyric 那一項。
 - 想換語言（中文版換英文版，或反過來）不能用更新版，要用完整版整包覆蓋（先備份）。設定檔裡還記著另一種語言的名稱，只換主題檔案的話，播放列會變成空白。
