@@ -17,6 +17,8 @@ A fresh foobar2000 install is recommended. Installing on a foobar2000 you alread
 
 ## Features
 
+v1.40 also brings a number of interface and speed improvements, such as a blurred cover background on the now playing view, thin scroll bars, a new folder search box, a vinyl picture for tracks without a cover, and faster album header updates.
+
 The animations below were recorded with the author's own music library and font; see ["Fonts"](#fonts) to change the font.
 
 ### Now playing view
@@ -24,6 +26,12 @@ The animations below were recorded with the author's own music library and font;
 Click the now playing bar to expand it into a now playing view with a large cover and the lyrics. Click again to collapse it.
 
 ![Expanding and collapsing the now playing view](images/expand-collapse-en.webp)
+
+### Blurred cover background
+
+The background of the now playing view takes on a soft, blurred version of the current cover, so every track looks different. To turn it off or dim it, go to File → Preferences → Tools → Nocturne → "Interface" tab.
+
+![The blurred cover background of the now playing view](images/cover-blur-en.webp)
 
 ### Output device
 
@@ -44,11 +52,11 @@ The "Add to Queue" button in the album header adds the whole playlist to the pla
 
 ![Adding four tracks to the queue, looking at the Queue tab, and removing one](images/queue-en.webp)
 
-Playing another track (double-click, Enter, or right-click → Play) keeps the queue by default. To go back to foobar2000's default behavior (playing another track clears the queue), go to File → Preferences → Tools → Nocturne → "Queue" tab and untick "Keep the queue when playing another track (double-click, Enter, Play)".
+Playing another track (double-click, Enter, or right-click → Play) keeps the queue by default. To go back to foobar2000's default behavior (playing another track clears the queue), go to File → Preferences → Tools → Nocturne → "Up Next & Queue" tab and untick "Keep the queue when playing another track (double-click, Enter, Play)".
 
 ### Up Next card
 
-On the expanded now playing view, when a track is about to end, an Up Next card appears at the bottom right with the next track's cover, title, artist and a countdown; when it reaches 0, the next track starts. The countdown length, position and card size can be changed in File → Preferences → Tools → Nocturne → "Up Next Notice" tab.
+On the expanded now playing view, when a track is about to end, an Up Next card appears at the bottom right with the next track's cover, title, artist and a countdown; when it reaches 0, the next track starts. The countdown length, position and card size can be changed in File → Preferences → Tools → Nocturne → "Up Next & Queue" tab.
 
 ![The Up Next card appears near the end of a track, counts down, and the next track starts](images/up-next-en.webp)
 
@@ -75,7 +83,7 @@ Find your situation first:
 |----------------|------------|
 | A fresh foobar2000 (recommended) | Follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first) below |
 | A foobar2000 you already use, without Nocturne | **Back up the profile folder first**, then follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first) (ESLyric must be 1.0.7.0 or newer; update it first if it is older). Your interface settings, fonts, Album list settings, ESLyric settings and playlists are replaced by the theme's; see ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use) |
-| Nocturne already installed (for example v1.20), and you want a newer version in the same language | Download the Update ZIP and see ["Updating to a new version"](#updating-to-a-new-version): your playlists and other settings stay (the ESLyric settings are replaced with the theme's) |
+| Nocturne already installed (for example v1.30), and you want a newer version in the same language | Download the Update ZIP and see ["Updating to a new version"](#updating-to-a-new-version): your playlists and foobar2000's core settings stay (the Columns UI and ESLyric settings are replaced with the theme's) |
 | Switching from the Chinese version to the English one (or the other way round) | Overwrite everything with the Full ZIP (as in [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder)). Do not use the Update ZIP, or the now playing bar will be blank |
 
 ### Step 1: Install foobar2000 and three required components (do this first)
@@ -177,25 +185,29 @@ Install a separate portable foobar2000 and try the theme there. The one you use 
 
 ## Updating to a new version
 
-If you already have Nocturne and want a newer version **in the same language**, download the Update ZIP (its name contains `update`, for example `fb2k-nocturne-v1.30-update-en.zip`). It contains the theme's own files and the complete ESLyric settings (layout, online lyric source scripts, ESLyric settings file), and does not contain your playlists or the settings of the other components, so you can simply extract it over your profile folder:
+If you already have Nocturne and want a newer version **in the same language**, download the Update ZIP (its name contains `update`, for example `fb2k-nocturne-v1.40-update-en.zip`) and extract it over your profile folder:
 
 1. File → Exit to close foobar2000.
-2. Open the profile folder (see the start of ["Installation"](#installation)).
+2. **Back up the `configuration` folder in your profile folder** (see the start of ["Installation"](#installation)).
 3. In File Explorer, double-click the Update ZIP to open it → Ctrl+A → Copy → paste into the profile folder. When asked about existing files, choose "Replace the files in the destination". (File Explorer merges the folders and only replaces files with the same name, so your other components and files are not deleted.)
 4. Start foobar2000 again.
 
-The Update ZIP replaces: `user-components-x64` (the DLLs of the three components), `eslyric-data` (the layout `main.xml` and the online lyric source scripts), `webview` (the album header page) and `configuration\foo_uie_eslyric.dll.cfg` (the ESLyric settings). The other settings files in `configuration` and `playlists-v2.0` are not in it, so your playlists and Columns UI settings stay as they are.
+**Since v1.40 the Update ZIP also replaces the Columns UI settings.** Many new features (for example the blurred cover background of the now playing view) keep their settings there and do not work without it.
+
+Replaced with the new version:
+
+- The three components (Columns UI, Album list, foo_queue_mirror).
+- ESLyric: the layout `main.xml`, the online lyric source scripts and the ESLyric settings file (lyric source order, search and save settings).
+- The album header page (`webview`).
+- **The Columns UI settings file `configuration\foo_ui_columns.dll.cfg`**: the layout (panel arrangement and sizes, lyric panel settings), playlist columns, fonts and colours, and every option on the Nocturne preferences page.
+- The vinyl picture shown for tracks without a cover, `no-cover.png` (new).
+
+Not touched: your playlists, the media library, foobar2000's core settings (output device, volume, keyboard shortcuts, the no-cover stub setting), Album list's own settings file, your lyric files and other components.
 
 Notes:
 
-- **The volume bar is collapsed to an icon by default.** Since v1.30 the theme collapses the volume bar to a speaker icon at the far right of the playback bar by default (hover over it and a slider pops up). Your Nocturne settings (including this one) are stored in the Columns UI settings file, which the Update ZIP does not contain, so after updating you get the new default. To get the original volume bar back: File → Preferences → Tools → Nocturne → "Playback", untick "Collapse the volume bar to an icon". On a screen with Windows display scaling of 125% or more it is better to leave it on: the volume bar needs a wider window, and when the scaling is large and the window narrow, the dB readout or the volume bar on the right gets cut off by the window edge (the check box on the preferences page carries the same hint).
-- **The columns of the playlist are not updated.** In a fresh v1.30 installation the playlist uses auto-size columns: when the window is narrow (for example a 1920×1080 screen with Windows scaling at 125%) the File Name and Artist columns shrink with it and every column stays visible. The Update ZIP does not contain the Columns UI settings file, so your columns stay as they are, and at a larger scaling the columns on the right may be cut off with a horizontal scroll bar. To switch to the new column widths: go to the Release page of this version and download `fb2k-nocturne-v1.30-playlist-columns-en.fcl` (the Chinese version has `fb2k-nocturne-v1.30-playlist-columns-zh-TW.fcl`) from the list of files; these two files are not inside any ZIP. Then go to File → Preferences → Display → Columns UI → "Setup" tab → "Import configuration…", pick it; in the "Select settings to import" window keep the default ticks and click OK. **This replaces your current playlist column settings (which columns are shown, their order and widths) with the theme's defaults**, so write down your own adjustments first.
-- The Update ZIP replaces the layout file `eslyric-data\layout\fb2k-modern\main.xml`. If you have edited it, back it up before updating.
-- The fonts of the now playing bar, now playing view and album header go back to the default, because they are stored in `main.xml` and `index.html`. Choose your font again in Tools → Nocturne → "Fonts" or in View → Layout → Theme Font… (the fonts of the lists, tabs and folder tree are not affected).
-- What is inside the settings files is not updated. When updating from v1.00 or v1.10 to v1.20 or newer, that applies to the display script of the first playlist column (▶): it keeps working without the update; the only difference is that after you switch folders with Album list and back, newly added tracks may not show ▶. To switch to the new script: File → Preferences → Display → Columns UI → Playlist view → "Columns" tab, select the first column (▶), open the "Display script" tab, replace the content with the line below, click Apply in that section, then OK:
-
-  `$if($or(%isplaying%,%cui_now_playing_file%),$if(%ispaused%,❚❚,▶),[%queue_indexes%])`
-
+- **To keep your own Columns UI settings**, choose "Skip this file" for `configuration\foo_ui_columns.dll.cfg` while copying. The cost: no blurred cover background and the old playlist columns; the other new features work as usual. To update only the columns, download `fb2k-nocturne-v1.40-playlist-columns-en.fcl` from the Release page of this version (the Chinese version has `-zh-TW.fcl`; neither is inside a ZIP), then File → Preferences → Display → Columns UI → "Setup" tab → "Import configuration…", pick it, keep the default ticks and click OK (this replaces your playlist column settings).
+- If you have edited `main.xml` or picked other fonts, do it again after updating: the fonts of the now playing bar, now playing view and album header go back to the default. Choose them again in Tools → Nocturne → "Fonts" or in View → Layout → Theme Font….
 - Your ESLyric settings are replaced with the theme's, including the 7 online lyric sources and their order, the search and save settings, the desktop lyric and so on. When no local lyrics are found, ESLyric goes online during playback; how to turn that off is described above in ["Lyrics: where they come from, where they are saved, where to change settings"](#lyrics-where-they-come-from-where-they-are-saved-where-to-change-settings). To keep your own ESLyric settings, see the ESLyric item under ["What gets replaced"](#what-gets-replaced) above.
 - To switch language (Chinese version to English, or the other way round), do not use the Update ZIP. Overwrite everything with the Full ZIP (after making a backup). The settings files still remember the names of the other language, so replacing only the theme files leaves the now playing bar blank.
 - If you are not sure, overwrite everything with the Full ZIP as described in ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use) above, after making a backup.
@@ -240,6 +252,7 @@ To fine-tune individual items, go to File → Preferences → Display → Column
 ## Notes
 
 - **Do not replace Columns UI through foobar2000's component updates.** This theme uses a modified Columns UI; the official version lacks the now playing view, the underlined tabs and other features.
+- **The same goes for Album list (since v1.40).** The theme ships a modified version; the official one lacks the new search box and the "Search Album list" command. Put the file from the ZIP back if that happens.
 - To go back to plain foobar2000: delete the whole profile folder, then reinstall or re-extract the official version.
 - So far tested only on Windows 10 (Traditional Chinese edition) with foobar2000 2.26.1. Not yet tested on English Windows or on Windows 11 (where the Segoe MDL2 Assets font used by the now playing bar icons and the ☰ button has not been checked).
 
