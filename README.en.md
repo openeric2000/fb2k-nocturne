@@ -17,7 +17,7 @@ A fresh foobar2000 install is recommended. Installing on a foobar2000 you alread
 
 ## Features
 
-New in v1.40: a blurred cover background on the now playing view, thin scroll bars, a folder search box, a vinyl picture for tracks without a cover, and faster album header updates.
+New in v1.50: six things to show on the now playing view (including a VU meter and a spectrum), a track info card behind the cover, hiding instrumental versions in the folder tree, no more duplicates when adding to the queue, and one consistent look for notices and tooltips.
 
 "Preferences page" below means File → Preferences → Tools → Nocturne; see ["Preferences page"](#preferences-page). The animations were recorded with the author's own music library and font; see ["Fonts"](#fonts) to change the font.
 
@@ -27,9 +27,21 @@ Click the now playing bar to expand it into a now playing view with a large cove
 
 ![Expanding and collapsing the now playing view](images/expand-collapse-en.webp)
 
+### What the now playing view shows
+
+The button at the top left switches what the now playing view shows: cover only, cover + lyrics, VU meter, spectrum, lyrics + VU meter, or lyrics + spectrum. Left-click for the next one, right-click to pick from thumbnails; untick the ones you don't need on the "Now Playing View" tab of the preferences page. Right-click the VU meter or the spectrum to change its style.
+
+![Switching what the now playing view shows: lyrics, VU meter, spectrum, and the thumbnails on right-click](images/display-modes.webp)
+
+Click the cover to flip to a track info card (composer, lyricist, arranger, play count and more), and click again to go back; the large cover now opens from the small zoom button at the cover's bottom right. The lyrics are locked against dragging by default: holding the left button and dragging no longer seeks, while the wheel and right-click still work.
+
+![Clicking the cover flips it to the track info card, and back](images/info-card-en.webp)
+
+![The zoom button at the cover's bottom right opens the large cover](images/cover-zoom.webp)
+
 ### Blurred cover background
 
-The background of the now playing view takes on a soft, blurred version of the current cover, so every track looks different. To turn it off or dim it, go to the "Interface" tab of the preferences page.
+The background of the now playing view takes on a soft, blurred version of the current cover, so every track looks different. To turn it off or dim it, go to the "Now Playing View" tab of the preferences page.
 
 ![The blurred cover background of the now playing view](images/cover-blur-en.webp)
 
@@ -41,27 +53,23 @@ The playback bar shows which device the sound is going to: an output type on the
 
 You can rename devices (for example `Holo Audio=DAC (Holo Audio)`) or turn this off on the "Playback" tab of the preferences page.
 
-### Mouse wheel on the progress bar
-
-Put the mouse over the progress bar and scroll to seek: up to go forward, down to go back, 5 seconds per notch, or 30 seconds per notch while holding Shift. You can change the seconds on the "Playback" tab of the preferences page, or turn it off.
-
 ### Queue
 
 The "Add to Queue" button in the album header adds the whole playlist to the playback queue; select some tracks first and it adds only those. The "Queue" tab shows what is in the queue: select some tracks and press "Remove Selected (N)" to take only those out; with nothing selected, press "Remove from Queue" and press again within 3 seconds to clear the whole queue.
 
 ![Adding four tracks to the queue, looking at the Queue tab, and removing one](images/queue-en.webp)
 
-Playing another track (double-click, Enter, or right-click → Play) keeps the queue by default; to go back to foobar2000's default (playing another track clears the queue), untick the option on the "Up Next & Queue" tab of the preferences page.
+Tracks that are already in the queue are not added again (tick the option on the "Up Next & Queue" tab of the preferences page to allow it). Playing another track (double-click, Enter, or right-click → Play) keeps the queue by default; to go back to foobar2000's default (playing another track clears the queue), untick the option on the same tab.
 
 ### Up Next card
 
-On the expanded now playing view, when a track is about to end, an Up Next card appears at the bottom right with the next track's cover, title, artist and a countdown; when it reaches 0, the next track starts. The countdown length, position and card size can be changed on the "Up Next & Queue" tab of the preferences page.
+On the expanded now playing view, when a track is about to end, an Up Next card appears at the bottom right with the next track's cover, title, artist and a countdown; when it reaches 0, the next track starts. Click the card to play the next track right away. The countdown length and position can be changed on the "Up Next & Queue" tab of the preferences page.
 
 ![The Up Next card appears near the end of a track, counts down, and the next track starts](images/up-next-en.webp)
 
 ### Preferences page
 
-The theme's own settings are in File → Preferences → Tools → Nocturne, split into five tabs (Playback, Up Next & Queue, Fonts, Interface, About), and take effect immediately.
+The theme's own settings are in File → Preferences → Tools → Nocturne, split into seven tabs (Playback, Up Next & Queue, Fonts, Interface, Now Playing View, Folders, About), and take effect immediately.
 
 ![The Nocturne preferences page](images/settings-en-v140.webp)
 
@@ -82,7 +90,8 @@ Find your situation first:
 |----------------|------------|
 | A fresh foobar2000 (recommended) | Follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first) below |
 | A foobar2000 you already use, without Nocturne | **Back up the profile folder first**, then follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first). Your interface settings are replaced by the theme's; see ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use) |
-| Nocturne already installed (for example v1.30), and you want a newer version in the same language | Download the Update ZIP and see ["Updating to a new version"](#updating-to-a-new-version) |
+| Nocturne v1.40 already installed, and you want the new version in the same language | Download the Update ZIP and see ["Updating to a new version"](#updating-to-a-new-version) |
+| Nocturne v1.30 or older installed | **Back up the profile folder first**, then overwrite everything with the Full ZIP ([step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder)). The Update ZIP only works from v1.40 |
 | Switching from the Chinese version to the English one (or the other way round) | Overwrite everything with the Full ZIP (as in [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder)). Do not use the Update ZIP, or the now playing bar will be blank |
 
 ### Step 1: Install foobar2000 and three required components (do this first)
@@ -174,28 +183,25 @@ Install a separate portable foobar2000 and try the theme there. The one you use 
 
 ## Updating to a new version
 
-If you already have Nocturne and want a newer version **in the same language**, download the Update ZIP (its name contains `update`, for example `fb2k-nocturne-v1.40-update-en.zip`) and extract it over your profile folder:
+If you have Nocturne **v1.40** and want the new version **in the same language**, download the Update ZIP (its name contains `update`, for example `fb2k-nocturne-v1.50-update-en.zip`) and extract it over your profile folder:
 
 1. File → Exit to close foobar2000.
-2. **Back up the `configuration` folder in your profile folder** (see the start of ["Installation"](#installation)).
-3. In File Explorer, double-click the Update ZIP to open it → Ctrl+A → Copy → paste into the profile folder. When asked about existing files, choose "Replace the files in the destination". (File Explorer merges the folders and only replaces files with the same name, so your other components and files are not deleted.)
-4. Start foobar2000 again.
+2. In File Explorer, double-click the Update ZIP to open it → Ctrl+A → Copy → paste into the profile folder (see the start of ["Installation"](#installation)). When asked about existing files, choose "Replace the files in the destination". (File Explorer merges the folders and only replaces files with the same name, so your other components and files are not deleted.)
+3. Start foobar2000 again.
 
 Replaced with the new version:
 
 - The three components (Columns UI, Album list, foo_queue_mirror).
-- ESLyric: the layout `main.xml`, the online lyric source scripts and the ESLyric settings file.
+- ESLyric's layout `main.xml` and the online lyric source scripts.
 - The album header page (`webview`).
-- **The Columns UI settings file `configuration\foo_ui_columns.dll.cfg` (since v1.40)**: the layout, playlist columns, fonts and colours, and every option on the preferences page. New features such as the blurred cover background keep their settings here and do not work without it.
-- The vinyl picture shown for tracks without a cover, `no-cover.png` (new).
+- The vinyl picture shown for tracks without a cover, `no-cover.png`.
 
-Not touched: your playlists, the media library, foobar2000's core settings (output device, volume, keyboard shortcuts, the no-cover stub setting), Album list's own settings file, your lyric files and other components.
+**The v1.50 Update ZIP leaves your settings alone**: the Columns UI settings file (layout, playlist columns, fonts and colours, preferences page options) and the ESLyric settings file are not in it, so whatever you changed after v1.40 stays. Your playlists, the media library, foobar2000's core settings and your lyric files are not touched either.
 
 Notes:
 
-- **To keep your own Columns UI settings**, choose "Skip this file" for `configuration\foo_ui_columns.dll.cfg` while copying. The cost: no blurred cover background and the old playlist columns; the other new features work as usual.
-- If you have edited `main.xml` or picked other fonts, do it again after updating: the fonts of the now playing bar, now playing view and album header go back to the default. Choose them again on the "Fonts" tab of the preferences page.
-- Your ESLyric settings are replaced with the theme's (including the 7 online lyric sources). To stop online lyric searches, see ["Lyrics"](#lyrics-where-they-come-from-where-they-are-saved-where-to-change-settings); to keep your own ESLyric settings, see ["What gets replaced"](#what-gets-replaced).
+- If you have edited `main.xml`, do it again after updating; the fonts of the now playing bar, now playing view and album header go back to the default. Choose them again on the "Fonts" tab of the preferences page.
+- If you have v1.30 or older, this Update ZIP is not enough (it lacks settings added in v1.40); back up your profile folder and overwrite everything with the Full ZIP.
 - To switch language (Chinese version to English, or the other way round), do not use the Update ZIP, or the now playing bar will be blank. Overwrite everything with the Full ZIP as described in ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use), after making a backup. Do the same if you are not sure.
 
 ## Fonts
@@ -222,7 +228,7 @@ Use the "Fonts" tab of the preferences page:
 - Playlist, Playlist tabs, Folder tree, Other interface text: both the font and the size can be changed, and it is applied immediately.
 - Now playing bar and view, Album header: only the font can be changed (the size is fixed), it takes effect after restarting foobar2000, and a "Restart now" button appears at the bottom of the tab once you change one.
 
-You can also change everything at once from the main menu View → Layout → Theme Font… (also under the ☰ button at the top left → View → Layout) and pick an overall size (Small / Standard / Large / Extra Large, which only scales the lists, tabs and folder tree). Click "Yes" to restart when asked.
+The main menu item View → Layout → Theme Font… (also under the ☰ button at the top left → View → Layout) opens this tab directly.
 
 ### Lyrics font
 
