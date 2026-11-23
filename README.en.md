@@ -2,132 +2,106 @@
 
 [繁體中文](https://github.com/openeric2000/fb2k-nocturne/blob/main/README.md) | **English**
 
-A dark, streaming-style look for foobar2000: an album header on top, underlined playlist tabs, and an expandable now playing view with lyrics.
+A dark, streaming-style theme for foobar2000 (fb2k below): an album header on top, underlined playlist tabs, and an expandable now playing view with lyrics.
 
-Nocturne is built around **folder structure**: I sort my music into nested folders, so the interface centers on the folder tree on the left and the album header at the top, which shows the name, artist, year, track count and total length of whichever level you click.
+Made for people who sort music into **folders**: the folder tree is on the left, and the album header shows the name, artist, year, track count and total length of whichever level you click.
 
 ![Main window: folder tree, album header, playlist and playback bar](images/main-en.png)
 
-Download: https://github.com/openeric2000/fb2k-nocturne/releases
+Download: https://github.com/openeric2000/fb2k-nocturne/releases (if you have an older version, download this one too and overwrite everything)
 
-- First installation: download the **Full** ZIP.
-- You already have Nocturne: download the **Update** ZIP; see ["Updating to a new version"](#updating-to-a-new-version).
-
-A fresh foobar2000 install is recommended. Installing on a foobar2000 you already use overwrites your interface settings, fonts and playlists, so back up first; see ["Installation"](#installation).
+A fresh fb2k install is recommended. Installing on an fb2k you already use overwrites your interface settings, fonts and playlists, so back up first; see ["Installation"](#installation).
 
 ## Features
 
-New in v1.50: six things to show on the now playing view (including a VU meter and a spectrum), a track info card behind the cover, hiding instrumental versions in the folder tree, no more duplicates when adding to the queue, and one consistent look for notices and tooltips.
-
-"Preferences page" below means File → Preferences → Tools → Nocturne; see ["Preferences page"](#preferences-page). The animations were recorded with the author's own music library and font; see ["Fonts"](#fonts) to change the font.
+The screenshots use the author's own music library and font.
 
 ### Now playing view
 
-Click the now playing bar to expand it into a now playing view with a large cover and the lyrics. Click again to collapse it.
+Click the playback bar to expand it, click again to collapse. The background is a blurred version of the current cover, and the whole view cross-fades when the track changes.
 
 ![Expanding and collapsing the now playing view](images/expand-collapse-en.webp)
 
-### What the now playing view shows
+Click the cover to flip it to a track info card; the zoom button is at the cover's bottom right.
 
-The button at the top left switches what the now playing view shows: cover only, cover + lyrics, VU meter, spectrum, lyrics + VU meter, or lyrics + spectrum. Left-click for the next one, right-click to pick from thumbnails; untick the ones you don't need on the "Now Playing View" tab of the preferences page. Right-click the VU meter or the spectrum to change its style.
+### What it shows
 
-![Switching what the now playing view shows: lyrics, VU meter, spectrum, and the thumbnails on right-click](images/display-modes.webp)
+The button at the top left switches what the now playing view shows.
 
-Click the cover to flip to a track info card (composer, lyricist, arranger, play count and more), and click again to go back; the large cover now opens from the small zoom button at the cover's bottom right. The lyrics are locked against dragging by default: holding the left button and dragging no longer seeks, while the wheel and right-click still work.
+![The VU meters on the now playing view](images/vu-en.webp)
 
-![Clicking the cover flips it to the track info card, and back](images/info-card-en.webp)
+### The line under the cover
 
-![The zoom button at the cover's bottom right opens the large cover](images/cover-zoom.webp)
+The line under the cover shows quality + format by default.  
+Quality is lossy, CD, Hi-Res or DSD.
 
-### Blurred cover background
-
-The background of the now playing view takes on a soft, blurred version of the current cover, so every track looks different. To turn it off or dim it, go to the "Now Playing View" tab of the preferences page.
-
-![The blurred cover background of the now playing view](images/cover-blur-en.webp)
+![Right-click the line under the cover: five things it can show](images/below-cover-en.png)
 
 ### Output device
 
-The playback bar shows which device the sound is going to: an output type on the left (Default, Exclusive, ASIO, Muted) and the device name on the right. Hover over it to see the full name and the output mode; click it to switch device.
+The playback bar shows the current output device; click it to switch.
 
 ![Output device: hover for the info, click for the device list](images/output-device-en.webp)
 
-You can rename devices (for example `Holo Audio=DAC (Holo Audio)`) or turn this off on the "Playback" tab of the preferences page.
-
-### Queue
-
-The "Add to Queue" button in the album header adds the whole playlist to the playback queue; select some tracks first and it adds only those. The "Queue" tab shows what is in the queue: select some tracks and press "Remove Selected (N)" to take only those out; with nothing selected, press "Remove from Queue" and press again within 3 seconds to clear the whole queue.
-
-![Adding four tracks to the queue, looking at the Queue tab, and removing one](images/queue-en.webp)
-
-Tracks that are already in the queue are not added again (tick the option on the "Up Next & Queue" tab of the preferences page to allow it). Playing another track (double-click, Enter, or right-click → Play) keeps the queue by default; to go back to foobar2000's default (playing another track clears the queue), untick the option on the same tab.
-
 ### Up Next card
 
-On the expanded now playing view, when a track is about to end, an Up Next card appears at the bottom right with the next track's cover, title, artist and a countdown; when it reaches 0, the next track starts. Click the card to play the next track right away. The countdown length and position can be changed on the "Up Next & Queue" tab of the preferences page.
+When a track is about to end, the next track appears at the bottom right of the now playing view and starts after a countdown.
 
 ![The Up Next card appears near the end of a track, counts down, and the next track starts](images/up-next-en.webp)
 
 ### Preferences page
 
-The theme's own settings are in File → Preferences → Tools → Nocturne, split into seven tabs (Playback, Up Next & Queue, Fonts, Interface, Now Playing View, Folders, About), and take effect immediately.
+File → Preferences → Tools → Nocturne. Changes take effect immediately.
 
-![The Nocturne preferences page](images/settings-en-v140.webp)
+![The Now Playing View tab of the Nocturne preferences page](images/settings-en.png)
 
 ## Requirements
 
 - Windows 10 or 11
-- foobar2000 2.x **64-bit** (32-bit is not supported)
+- fb2k 2.x **64-bit** (32-bit is not supported)
 - Microsoft Edge WebView2 Runtime (built into Windows 11; most Windows 10 PCs already have it)
-- An SSD is recommended. On an HDD the first launch is slower.
+- An SSD is recommended. On an HDD, startup is slower.
 
 ## Installation
 
 The **profile folder** comes up often below: for the portable version it is the `profile` folder next to `foobar2000.exe`; for the installed version it is `%APPDATA%\foobar2000-v2` (paste it into the File Explorer address bar and press Enter to open it).
 
-Find your situation first:
-
 | Your situation | What to do |
 |----------------|------------|
-| A fresh foobar2000 (recommended) | Follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first) below |
-| A foobar2000 you already use, without Nocturne | **Back up the profile folder first**, then follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first). Your interface settings are replaced by the theme's; see ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use) |
-| Nocturne v1.40 already installed, and you want the new version in the same language | Download the Update ZIP and see ["Updating to a new version"](#updating-to-a-new-version) |
-| Nocturne v1.30 or older installed | **Back up the profile folder first**, then overwrite everything with the Full ZIP ([step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder)). The Update ZIP only works from v1.40 |
-| Switching from the Chinese version to the English one (or the other way round) | Overwrite everything with the Full ZIP (as in [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder)). Do not use the Update ZIP, or the now playing bar will be blank |
+| A fresh fb2k (recommended) | Follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first) below |
+| An fb2k you already use, without Nocturne | **Back up the profile folder first**, then follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first). Your interface settings are replaced by the theme's; see ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use) |
+| Nocturne already installed (any version, or switching language) | **Back up the profile folder first**, then overwrite everything ([Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder)). For what goes back to the defaults, see ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use) |
 
 ### Step 1: Install foobar2000 and three required components (do this first)
 
-The authors of these three components do not allow redistribution, so they are not included. Please download them from their official pages.
+The authors of these three components do not allow redistribution, so they are not included; download them from their official pages. **Install all three and restart fb2k before [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder)**; if one is missing, the lyrics, album header or play counts will not show.
 
-**Install all three and restart foobar2000 before going on to [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder).** If any of them is missing, the lyrics, album header or play counts will not show.
-
-1. Install foobar2000 2.x 64-bit: https://www.foobar2000.org/download (installer or portable both work)
+1. Install fb2k 2.x 64-bit: https://www.foobar2000.org/download (installer or portable both work)
 2. Download the three components (all are `.fb2k-component` files):
 
    | Component | Used for | Download | Tested version |
    |-----------|----------|----------|----------------|
-   | ESLyric | Now playing bar, now playing view, lyrics | https://github.com/ESLyric/release/releases | 1.0.7.0 (older versions do not work) |
-   | WebView2 (foo_webview2) | Album header at the top | https://www.foobar2000.org/components/view/foo_webview2 | 0.3.28 |
+   | ESLyric | Playback bar, now playing view, lyrics | https://github.com/ESLyric/release/releases | 1.0.7.0 (older versions do not work) |
+   | WebView2 (foo_webview2) | Album header at the top | https://www.foobar2000.org/components/view/foo_webview2 | 0.3.29 |
    | Playback Statistics (foo_playcount) | Plays column, "Recently Played" and "Not Played in 6 Months" playlists | https://www.foobar2000.org/components/view/foo_playcount | 3.1.11 |
 
-   **If you already have ESLyric, check its version too**: below 1.0.7.0, the icons in the now playing bar show as empty boxes and there is no play button. Install the new version as in item 3 below.
+   If you already have ESLyric, check its version too: below 1.0.7.0, the icons in the playback bar show as empty boxes and there is no play button. Install the new version as in item 3.
 
-3. Open foobar2000 → File → Preferences → Components → click "Install..." and pick each downloaded `.fb2k-component`. After adding all three, click OK and restart foobar2000 when asked.
+3. Open fb2k → File → Preferences → Components → click "Install..." and pick each downloaded `.fb2k-component`. After adding all three, click OK and restart fb2k when asked.
 4. After the restart, go back to Preferences → Components and check that ESLyric, WebView2 and Playback Statistics are all listed.
 
 ### Step 2: Close foobar2000 and copy the ZIP contents into the profile folder
 
-(This step uses the Full ZIP.)
-
-1. File → Exit to close foobar2000.
-2. Open the profile folder (see the start of ["Installation"](#installation) above).
+1. File → Exit to close fb2k.
+2. Open the profile folder (see the start of ["Installation"](#installation)).
 3. In File Explorer, double-click the ZIP to open it → Ctrl+A → Copy → go back to the profile folder and paste. When asked about existing files, choose "Replace the files in the destination".
 
-After copying, folders such as `user-components-x64`, `configuration`, `eslyric-data` and `webview` should be directly inside the profile folder. If they ended up one folder deeper, the theme will not work. The `Docs` folder only contains this guide and the license files; you can keep or delete it.
+After copying, folders such as `user-components-x64`, `configuration`, `eslyric-data` and `webview` should be directly inside the profile folder; if they ended up one folder deeper, the theme will not work. The `Docs` folder only holds this guide and the license files; keep it or delete it.
 
 ### Step 3: Open foobar2000 and switch to the theme
 
-1. Open foobar2000. Because a new user interface component was added, foobar2000 asks which user interface to use. Choose Columns UI.
-2. If a "Quick setup – Columns UI" window appears, **just click Cancel** and do not pick any layout in it. Picking a layout and clicking OK replaces the theme's layout.
+1. Open fb2k. When it asks which user interface to use, choose Columns UI.
+2. If a "Quick setup – Columns UI" window appears, **just click Cancel** and do not pick a layout in it. Picking a layout and clicking OK replaces the theme's layout.
 
 ### Step 4: Add your music folders
 
@@ -135,82 +109,45 @@ File → Preferences → Media Library → click "Add..." and add your music fol
 
 ### Lyrics: where they come from, where they are saved, where to change settings
 
-The ESLyric settings are already tuned for you (they are installed together with the theme), and lyrics are searched for automatically during playback:
+The ESLyric settings are already tuned and installed with the theme. During playback ESLyric first looks for lyric files on your computer (in the song's folder, or in the `lyrics` folder inside the profile folder); only if nothing is found does it search NetEase Cloud Music, Kugou, QQ Music, NetEase English, LRCLIB, MiniLyrics and Musixmatch online. **Online searches send the song title and artist to those services**; how to turn them off is below.
 
-1. First, lyric files on your computer: in the same folder as the song, or in the `lyrics` folder inside the profile folder.
-2. Only if nothing is found, ESLyric goes online and searches NetEase Cloud Music, Kugou, QQ Music, NetEase English, LRCLIB, MiniLyrics and Musixmatch. **This sends the song title and artist to those services**; how to turn it off is below.
-
-Synced lyrics that are found are saved automatically to the `lyrics` folder inside the profile folder. Nothing to set up:
+Synced lyrics that are found are saved to the `lyrics` folder inside the profile folder:
 
 - Portable: `foobar2000\profile\lyrics\`
 - Installed: `%APPDATA%\foobar2000-v2\lyrics\`
 
-To change the lyric settings, go to File → Preferences → Tools → ESLyric:
+Lyric settings are in File → Preferences → Tools → ESLyric:
 
-- Do not want online searches: under "Lyric Options" turn off "Automatically search on playback start", or untick the sources you do not want under "Lyric Sources" (the built-in "Local File" source only reads lyric files on your computer).
-- Want more lyric sources: "Get More..." at the top right of the "Lyric Sources" page.
-- Where lyrics are saved and when: "Save Settings".
+- No online searches: under "Lyric Options" turn off "Automatically search on playback start", or untick the sources you do not want under "Lyric Sources" (the built-in "Local File" source only reads lyric files on your computer).
 
 ## Installing on a foobar2000 you already use
 
-You can, but know this first: in [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder), when you copy the ZIP contents and choose "Replace the files in the destination", your current interface settings are replaced with the theme's. So back up first.
+When you choose "Replace the files" in [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder), your current interface settings are replaced with the theme's, so back up first:
 
-### Back up first
-
-1. File → Exit to close foobar2000.
+1. File → Exit to close fb2k.
 2. Copy the whole profile folder to somewhere else.
-3. To go back later, close foobar2000, copy the backup back into the profile folder and choose "Replace" when asked.
+3. To go back later, close fb2k, copy the backup back into the profile folder and choose "Replace" when asked.
 
 ### What gets replaced
 
-- **Interface settings**: the Columns UI layout, the playlist columns, colours, the status bar and so on are replaced with the theme's. If you already use Columns UI and have customized the layout, your changes will be gone (an official Columns UI you installed is simply replaced by the theme's modified one; they do not conflict).
-- **Fonts**: the fonts of the lists, tabs, folder tree, now playing bar, now playing view and album header go back to the theme's default, Segoe UI. To use another font, see ["Fonts"](#fonts).
+- **Interface settings**: the Columns UI layout, playlist columns, colours, the status bar and so on. An official Columns UI is simply replaced by the theme's modified one (no conflict), but your layout changes are gone.
+- **Fonts**: the fonts of the lists, tabs, folder tree, playback bar, now playing view and album header go back to the theme's default, Segoe UI; to change them, see ["Fonts"](#fonts).
 - **Album list settings**.
-- **ESLyric settings**: the lyric sources and their order, the search and save settings, the desktop lyric and so on are replaced with the theme's. Lyrics are now saved to the `lyrics` folder inside the profile folder; lyric files you kept somewhere else are not deleted, but ESLyric no longer looks there or saves there. To keep your own ESLyric settings, choose "Skip" for the file `configuration\foo_uie_eslyric.dll.cfg` when copying the ZIP contents, **and do not copy** the `eslyric-data\scripts` folder (if you skip only the settings file but copy the scripts, the 7 online sources appear at the end of your source list, ticked).
-- **Album header page**: if you put your own page in `webview\default\` in the profile folder, it is replaced by the theme's.
+- **ESLyric settings**: lyric sources and their order, search and save settings, the desktop lyric and so on. Lyrics are now saved to the `lyrics` folder inside the profile folder; lyric files you kept elsewhere are not deleted, but ESLyric no longer looks or saves there. To keep your own ESLyric settings, skip `configuration\foo_uie_eslyric.dll.cfg` when copying and do not copy `eslyric-data\scripts`.
 - **Playlists**: the five playlists that come with the theme (Selected Folder, Queue, Recently Added, Recently Played, Not Played in 6 Months) go back to their defaults. Other playlists you made are not deleted, but they no longer appear in the playlist tabs (restoring your backup brings them back).
 
 ### What is not affected
 
-- foobar2000's own settings: output device, media library folders, keyboard shortcuts, DSP and so on.
+- fb2k's own settings: output device, media library folders, keyboard shortcuts, DSP and so on.
 - Your media library and play counts.
-- The lyric files you have already saved (but your ESLyric settings are replaced, see above).
+- The lyric files you have already saved.
 - The settings of other components.
 
-### If you do not want to touch your current foobar2000
-
-Install a separate portable foobar2000 and try the theme there. The one you use now is not touched at all.
-
-## Updating to a new version
-
-If you have Nocturne **v1.40** and want the new version **in the same language**, download the Update ZIP (its name contains `update`, for example `fb2k-nocturne-v1.50-update-en.zip`) and extract it over your profile folder:
-
-1. File → Exit to close foobar2000.
-2. In File Explorer, double-click the Update ZIP to open it → Ctrl+A → Copy → paste into the profile folder (see the start of ["Installation"](#installation)). When asked about existing files, choose "Replace the files in the destination". (File Explorer merges the folders and only replaces files with the same name, so your other components and files are not deleted.)
-3. Start foobar2000 again.
-
-Replaced with the new version:
-
-- The three components (Columns UI, Album list, foo_queue_mirror).
-- ESLyric's layout `main.xml` and the online lyric source scripts.
-- The album header page (`webview`).
-- The vinyl picture shown for tracks without a cover, `no-cover.png`.
-
-**The v1.50 Update ZIP leaves your settings alone**: the Columns UI settings file (layout, playlist columns, fonts and colours, preferences page options) and the ESLyric settings file are not in it, so whatever you changed after v1.40 stays. Your playlists, the media library, foobar2000's core settings and your lyric files are not touched either.
-
-Notes:
-
-- If you have edited `main.xml`, do it again after updating; the fonts of the now playing bar, now playing view and album header go back to the default. Choose them again on the "Fonts" tab of the preferences page.
-- If you have v1.30 or older, this Update ZIP is not enough (it lacks settings added in v1.40); back up your profile folder and overwrite everything with the Full ZIP.
-- To switch language (Chinese version to English, or the other way round), do not use the Update ZIP, or the now playing bar will be blank. Overwrite everything with the Full ZIP as described in ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use), after making a backup. Do the same if you are not sure.
+To leave your current fb2k untouched, install a separate portable fb2k and try the theme there.
 
 ## Fonts
 
-The theme uses **Segoe UI**, which comes with Windows, so there is nothing to install. Segoe UI does not include Chinese or Japanese characters. If your library has many Chinese or Japanese titles, switch to one of the recommended fonts below.
-
-### Recommended fonts
-
-These free fonts cover both Chinese and Japanese well. Tested against about 100,000 Chinese and Japanese song and folder names, each is missing fewer than 0.2% of the characters:
+The theme uses **Segoe UI**, which comes with Windows, so there is nothing to install. Segoe UI has no Chinese or Japanese characters; if your library has many Chinese or Japanese titles, switch to one of these free fonts. Tested against about 100,000 Chinese and Japanese song and folder names, each is missing fewer than 0.2% of the characters:
 
 | Font | Style | Missing | Download |
 |------|-------|---------|----------|
@@ -218,21 +155,9 @@ These free fonts cover both Chinese and Japanese well. Tested against about 100,
 | Chiron Hei HK | Sans-serif, clean and easy to read | 0.06% | https://github.com/chiron-fonts/chiron-hei-hk/releases |
 | Chiron GoRound TC | Rounded, softer look | 0.19% | https://github.com/chiron-fonts/chiron-go-round-tc/releases |
 
-After downloading, right-click the font file → "Install" (or "Install for all users"), then change the theme font as described below.
+After downloading, right-click the font file → "Install" (or "Install for all users"), then change it on the "Fonts" tab of the preferences page. The playback bar, now playing view and album header need an fb2k restart after the change.
 
-### Changing the theme font
-
-Use the "Fonts" tab of the preferences page:
-
-- The top row, "All parts", changes everything at once.
-- Playlist, Playlist tabs, Folder tree, Other interface text: both the font and the size can be changed, and it is applied immediately.
-- Now playing bar and view, Album header: only the font can be changed (the size is fixed), it takes effect after restarting foobar2000, and a "Restart now" button appears at the bottom of the tab once you change one.
-
-The main menu item View → Layout → Theme Font… (also under the ☰ button at the top left → View → Layout) opens this tab directly.
-
-### Lyrics font
-
-The lyrics font is not set here but in ESLyric:
+The lyrics font is set in ESLyric:
 
 - Lyrics: right-click the lyrics → Panel Options....
 - Desktop lyric (off by default): File → Preferences → Tools → ESLyric → Desktop Lyric → Display settings.
@@ -241,19 +166,17 @@ The lyrics font is not set here but in ESLyric:
 
 ### A keyboard shortcut that jumps to the playing track
 
-Give foobar2000's "Activate now playing" a keyboard shortcut and one key press finds and selects the playing track in a long playlist. This is foobar2000's own setting, so set it up once yourself (the example uses `F4`):
+Give fb2k's "Activate now playing" a keyboard shortcut, and one key press selects the playing track in a long playlist (the example uses `F4`):
 
 1. File → Preferences → Keyboard Shortcuts, then click "Add new".
 2. In the Action section, type `Activate now playing` into "Filter list by", then click View → Playlist view → Activate now playing in the list.
 3. Click the Key field at the bottom and press the key you want, then click Apply → OK.
 
-![Keyboard Shortcuts: assigning F4 to Activate now playing](images/keyboard-shortcut-activate-now-playing.png)
-
 ## Notes
 
-- **Do not replace Columns UI through foobar2000's component updates.** This theme uses a modified Columns UI; the official version lacks the now playing view, the underlined tabs and other features.
-- **The same goes for Album list (since v1.40).** The theme ships a modified version; the official one lacks the new search box and the "Search Album list" command. Put the file from the ZIP back if that happens.
-- To go back to plain foobar2000: delete the whole profile folder, then reinstall or re-extract the official version.
+- **Do not replace Columns UI through fb2k's component updates.** This theme uses a modified Columns UI; the official version lacks the now playing view, the underlined tabs and other features.
+- The same goes for Album list: the theme ships a modified version.
+- To go back to plain fb2k: delete the whole profile folder, then reinstall or re-extract the official version.
 
 ## License
 
