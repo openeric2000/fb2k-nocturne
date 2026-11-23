@@ -96,7 +96,7 @@ The authors of these three components do not allow redistribution, so they are n
 2. Open the profile folder (see the start of ["Installation"](#installation)).
 3. In File Explorer, double-click the ZIP to open it → Ctrl+A → Copy → go back to the profile folder and paste. When asked about existing files, choose "Replace the files in the destination".
 
-After copying, folders such as `user-components-x64`, `configuration`, `eslyric-data` and `webview` should be directly inside the profile folder; if they ended up one folder deeper, the theme will not work. The `Docs` folder only holds this guide and the license files; keep it or delete it.
+After copying, folders such as `user-components-x64`, `configuration`, `eslyric-data` and `webview` should be directly inside the profile folder; if they ended up one folder deeper, the theme will not work. The `Docs` folder only holds the license files; keep it or delete it.
 
 ### Step 3: Open foobar2000 and switch to the theme
 
