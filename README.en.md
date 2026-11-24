@@ -80,7 +80,7 @@ The installer is not digitally signed, so Windows may stop it the first time:
 - "Windows protected your PC": click "More info", then "Run anyway".
 - "Open File - Security Warning": click "Run".
 - With Smart App Control turned on in Windows 11, unsigned programs are blocked outright; install by hand instead (below).
-- If your antivirus flags it, you can check the file on [VirusTotal](https://www.virustotal.com/), or compare it with the `.sha256` file on the Releases page.
+- If your antivirus flags it, you can check the file on [VirusTotal](https://www.virustotal.com/).
 
 ### Installing by hand
 

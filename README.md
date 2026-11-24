@@ -77,7 +77,7 @@
 - 出現「Windows 已保護您的電腦」：按「其他資訊」，再按「仍要執行」。
 - 出現「開啟檔案 - 安全性警告」：按「執行」。
 - Windows 11 開了「智慧型應用程式控制」的話，沒有簽章的程式會直接被擋下，請改用下面的手動安裝。
-- 防毒軟體誤判時，可以把檔案送到 [VirusTotal](https://www.virustotal.com/) 檢查，或用 Releases 附的 `.sha256` 比對檔案有沒有被改過。
+- 防毒軟體誤判時，可以把檔案送到 [VirusTotal](https://www.virustotal.com/) 檢查。
 
 ### 手動安裝
 
