@@ -8,9 +8,9 @@ Made for people who sort music into **folders**: the folder tree is on the left,
 
 ![Main window: folder tree, album header, playlist and playback bar](images/main-en.png)
 
-Download: https://github.com/openeric2000/fb2k-nocturne/releases (if you have an older version, download this one too and overwrite everything)
+Download: https://github.com/openeric2000/fb2k-nocturne/releases (the installer `Nocturne-Setup-v2.0.exe` is recommended; the ZIP is there for installing by hand)
 
-A fresh fb2k install is recommended. Installing on an fb2k you already use overwrites your interface settings, fonts and playlists, so back up first; see ["Installation"](#installation).
+A fresh fb2k install is recommended. Installing on an fb2k you already use overwrites your interface settings and fonts; the installer backs up first, and if you install by hand, back up yourself. See ["Installation"](#installation).
 
 ## Features
 
@@ -66,13 +66,31 @@ File → Preferences → Tools → Nocturne. Changes take effect immediately.
 
 The **profile folder** comes up often below: for the portable version it is the `profile` folder next to `foobar2000.exe`; for the installed version it is `%APPDATA%\foobar2000-v2` (paste it into the File Explorer address bar and press Enter to open it).
 
+### With the installer (recommended)
+
+1. Download `Nocturne-Setup-v2.0.exe` from [Releases](https://github.com/openeric2000/fb2k-nocturne/releases) and double-click it.
+2. Pick the language and where fb2k is. If a component is missing, the installer lists its download page; once downloaded, come back and click "Install downloaded components". There is no need to open fb2k's Preferences.
+3. Before installing, it backs up the whole profile folder next to it (the folder name has the date and time). Your existing playlists are added after the theme's five.
+4. Open fb2k and choose **Columns UI** when asked for an interface. The first start takes longer while it builds the folder tree and caches.
+
+To remove it, run `Uninstall Nocturne.exe` in the profile folder (`Nocturne 解除安裝.exe` for the Chinese version). It puts back the files from before the install; playlists and lyrics added since then stay.
+
+The installer is not digitally signed, so Windows may stop it the first time:
+
+- "Windows protected your PC": click "More info", then "Run anyway".
+- "Open File - Security Warning": click "Run".
+- With Smart App Control turned on in Windows 11, unsigned programs are blocked outright; install by hand instead (below).
+- If your antivirus flags it, you can check the file on [VirusTotal](https://www.virustotal.com/), or compare it with the `.sha256` file on the Releases page.
+
+### Installing by hand
+
 | Your situation | What to do |
 |----------------|------------|
 | A fresh fb2k (recommended) | Follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first) below |
 | An fb2k you already use, without Nocturne | **Back up the profile folder first**, then follow [Steps 1-4](#step-1-install-foobar2000-and-three-required-components-do-this-first). Your interface settings are replaced by the theme's; see ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use) |
 | Nocturne already installed (any version, or switching language) | **Back up the profile folder first**, then overwrite everything ([Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder)). For what goes back to the defaults, see ["Installing on a foobar2000 you already use"](#installing-on-a-foobar2000-you-already-use) |
 
-### Step 1: Install foobar2000 and three required components (do this first)
+#### Step 1: Install foobar2000 and three required components (do this first)
 
 The authors of these three components do not allow redistribution, so they are not included; download them from their official pages. **Install all three and restart fb2k before [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder)**; if one is missing, the lyrics, album header or play counts will not show.
 
@@ -90,7 +108,7 @@ The authors of these three components do not allow redistribution, so they are n
 3. Open fb2k → File → Preferences → Components → click "Install..." and pick each downloaded `.fb2k-component`. After adding all three, click OK and restart fb2k when asked.
 4. After the restart, go back to Preferences → Components and check that ESLyric, WebView2 and Playback Statistics are all listed.
 
-### Step 2: Close foobar2000 and copy the ZIP contents into the profile folder
+#### Step 2: Close foobar2000 and copy the ZIP contents into the profile folder
 
 1. File → Exit to close fb2k.
 2. Open the profile folder (see the start of ["Installation"](#installation)).
@@ -98,12 +116,12 @@ The authors of these three components do not allow redistribution, so they are n
 
 After copying, folders such as `user-components-x64`, `configuration`, `eslyric-data` and `webview` should be directly inside the profile folder; if they ended up one folder deeper, the theme will not work. The `Docs` folder only holds the license files; keep it or delete it.
 
-### Step 3: Open foobar2000 and switch to the theme
+#### Step 3: Open foobar2000 and switch to the theme
 
 1. Open fb2k. When it asks which user interface to use, choose Columns UI.
 2. If a "Quick setup – Columns UI" window appears, **just click Cancel** and do not pick a layout in it. Picking a layout and clicking OK replaces the theme's layout.
 
-### Step 4: Add your music folders
+#### Step 4: Add your music folders
 
 File → Preferences → Media Library → click "Add..." and add your music folders. The folder tree on the left follows your folder structure.
 
@@ -122,7 +140,7 @@ Lyric settings are in File → Preferences → Tools → ESLyric:
 
 ## Installing on a foobar2000 you already use
 
-When you choose "Replace the files" in [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder), your current interface settings are replaced with the theme's, so back up first:
+Your current interface settings are replaced with the theme's. The installer backs up for you and can uninstall; if you install by hand, back up before choosing "Replace the files" in [Step 2](#step-2-close-foobar2000-and-copy-the-zip-contents-into-the-profile-folder):
 
 1. File → Exit to close fb2k.
 2. Copy the whole profile folder to somewhere else.
@@ -134,7 +152,9 @@ When you choose "Replace the files" in [Step 2](#step-2-close-foobar2000-and-cop
 - **Fonts**: the fonts of the lists, tabs, folder tree, playback bar, now playing view and album header go back to the theme's default, Segoe UI; to change them, see ["Fonts"](#fonts).
 - **Album list settings**.
 - **ESLyric settings**: lyric sources and their order, search and save settings, the desktop lyric and so on. Lyrics are now saved to the `lyrics` folder inside the profile folder; lyric files you kept elsewhere are not deleted, but ESLyric no longer looks or saves there. To keep your own ESLyric settings, skip `configuration\foo_uie_eslyric.dll.cfg` when copying and do not copy `eslyric-data\scripts`.
-- **Playlists**: the five playlists that come with the theme (Selected Folder, Queue, Recently Added, Recently Played, Not Played in 6 Months) go back to their defaults. Other playlists you made are not deleted, but they no longer appear in the playlist tabs (restoring your backup brings them back).
+- **Playlists**: the five playlists that come with the theme (Selected Folder, Queue, Recently Added, Recently Played, Not Played in 6 Months) go back to their defaults.
+  - With the installer: your other playlists are added after the theme's; ones with the same name as a theme playlist are left out and come back after uninstalling.
+  - By hand: your other playlists no longer appear in the tabs, and fb2k deletes their files when it closes. Only your backup can bring them back.
 
 ### What is not affected
 
